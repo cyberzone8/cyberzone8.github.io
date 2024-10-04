@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">EasyStartIE - Facilita tu llegada a Irlanda</title>
+    <link rel="stylesheet" href="assets/css/styles_bn.css">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="./assets/js/scripts.js"></script>
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<nav id="navbar">
+    <div class="nav-container">
+        <a href="#home" class="logo">EasyStartIE</a>
+        <div class="nav-links">
+            <a href="#services">Servicios</a>
+            <a href="#contact">Contacto</a>
+            <div class="language-selector">
+                <select onchange="changeLanguage(this.value)">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                    <option value="pt">Português</option>
+                    <option value="zh">中文</option>
+                </select>
+            </div>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+<header>
+    <h1 id="main-title">EasyStartIE</h1>
+    <p id="description">Facilitamos tu llegada a Irlanda, ayudándote a gestionar toda tu documentación básica.</p>
+    <a href="#services" class="button" id="explore-services">Explora Nuestros Servicios</a>
+</header>
+
+<main>
+    <section id="services" class="services">
+        <!-- Contenido de los servicios -->
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 id="ready-title">¿Listo para comenzar tu nueva vida en Irlanda?</h2>
+        <p id="contact-description">¡Nos encantaría ayudarte! Reserva una cita para discutir cómo podemos facilitarte la gestión de tus trámites.</p>
+        <button id="contact-button">Reserva tu cita</button>
+    </section>
+</main>
+
+<footer>
+    <p id="footer_text">© 2024 EasyStartIE - Todos los derechos reservados</p>
+</footer>
+
+<script>
+    // Menú desplegable para móviles
+    document.getElementById('hamburger').onclick = function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    };
+</script>
+
+</body>
+</html>

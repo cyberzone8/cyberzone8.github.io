@@ -1,0 +1,201 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #eaeaea; /* Color de fondo gris claro */
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #f4f4f4; /* Fondo claro */
+    color: #333;
+    padding: 20px 40px; /* Espaciado ajustado */
+    display: flex;
+    justify-content: space-between; /* Separar el logo y el selector de idioma */
+    align-items: center;
+    border-bottom: 2px solid #ccc; /* Línea inferior */
+}
+
+/* Logo */
+.logo {
+    max-width: 120px; /* Tamaño del logo */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Selector de idioma */
+.language-selector {
+    margin-left: auto;
+    background-color: transparent; /* Fondo transparente */
+    padding: 0;
+    box-shadow: none; /* Sin sombra */
+}
+
+.language-selector select {
+    font-size: 14px;
+}
+
+/* Servicios */
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+/* Tarjetas */
+.card {
+    background-color: white; /* Fondo blanco para las tarjetas */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin: 10px;
+    padding: 20px;
+    width: 220px; /* Ancho fijo para todas las tarjetas */
+    height: 180px; /* Altura fija para mantener el mismo tamaño */
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s; /* Transiciones más suaves */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Estilo del botón de servicios */
+#explore-services {
+    background-color: #555; /* Color gris medio */
+    color: white; /* Texto blanco */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+#explore-services:hover {
+    background-color: #333; /* Cambio de tono al pasar el cursor */
+}
+
+/* Contacto */
+.contact {
+    background-color: #555; /* Color gris medio */
+    color: white; /* Texto blanco */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.contact h2 {
+    margin: 0 0 10px 0;
+}
+
+.contact button {
+    background-color: #333; /* Gris oscuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+.contact button:hover {
+    background-color: #555; /* Cambio de tono al pasar el cursor */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el cursor */
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Gris muy oscuro */
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer .social-links a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para pantallas medianas y pequeñas */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between; /* Mantiene los elementos alineados */
+        padding: 10px 20px; /* Ajuste de padding */
+    }
+
+    .logo {
+        max-width: 100px; /* Reducir tamaño del logo */
+        margin-bottom: 10px; /* Espaciado entre logo y selector de idioma */
+    }
+
+    .language-selector {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Apilar elementos en columna en pantallas pequeñas */
+        padding: 10px 20px; /* Reducir padding en móvil */
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Estilos específicos para encabezado y botones */
+#main-title {
+    font-size: 2.5em; /* Tamaño del título */
+    margin: 0; /* Elimina margen */
+    font-weight: bold; /* Negrita */
+}
+
+#description {
+    font-size: 1.2em; /* Tamaño de la descripción */
+    margin: 10px 0; /* Espaciado vertical */
+}
+
+#explore-services {
+    display: inline-block; /* Para centrar el botón */
+    margin-top: 20px; /* Espaciado encima del botón */
+    padding: 10px 20px; /* Espaciado dentro del botón */
+    background-color: #32a852; /* Color del botón */
+    color: white; /* Color del texto en el botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s; /* Efecto de transición */
+}
+
+#explore-services:hover {
+    background-color: #287b3c; /* Color del botón al pasar el cursor */
+}
+
+/* Ajustes en pantallas más pequeñas */
+@media (max-width: 768px) {
+    header {
+        padding: 20px; /* Espaciado reducido en pantallas pequeñas */
+    }
+
+    #main-title {
+        font-size: 2em; /* Tamaño del título reducido */
+    }
+
+    #description {
+        font-size: 1em; /* Tamaño de la descripción reducido */
+    }
+}
+
+
