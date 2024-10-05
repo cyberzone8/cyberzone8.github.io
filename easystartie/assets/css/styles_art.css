@@ -1,0 +1,182 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    background-color: #0D1B2A; /* Fondo principal azul oscuro */
+    text-align: center;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #1B263B; /* Fondo más claro pero aún oscuro */
+    color: #FFFFFF;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 2px solid #F0A500; /* Línea dorada debajo del header */
+}
+
+#main-title {
+    font-size: 3em;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #F0A500; /* Título en dorado */
+}
+
+#description {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: #FFFFFF; /* Texto en blanco */
+}
+
+#explore-services {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #F0A500; /* Color brillante para el botón */
+    color: #1B263B; /* Texto oscuro para contraste */
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#explore-services:hover {
+    background-color: #FFD700; /* Dorado más claro al pasar el cursor */
+    transform: scale(1.05);
+}
+
+/* Servicios */
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.card {
+    background-color: #1B263B;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin: 15px;
+    padding: 30px;
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #FFFFFF;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.card h3 {
+    color: #F0A500;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #FFFFFF;
+    font-size: 1.1em;
+}
+
+/* Contacto */
+.contact {
+    background-color: #E63946; /* Rojo vibrante */
+    padding: 40px;
+    margin-top: 40px;
+    color: #FFFFFF;
+}
+
+.contact h2 {
+    margin: 0 0 20px 0;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contact button {
+    background-color: #F0A500;
+    color: #1B263B;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #FFD700;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #1B263B;
+    color: #FFFFFF;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer .social-links a {
+    color: #F0A500;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+footer .social-links a:hover {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
+/* Selector de idioma */
+.language-selector {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    background-color: #0D1B2A; /* Fondo oscuro para contraste */
+    border: 1px solid #F0A500;
+    border-radius: 5px;
+    padding: 5px;
+    color: #F0A500; /* Texto dorado */
+}
+
+.language-selector select {
+    border: none;
+    background-color: transparent;
+    color: #F0A500; /* Texto dorado para contraste */
+    font-size: 14px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        padding: 30px;
+    }
+
+    #main-title {
+        font-size: 2.5em;
+    }
+
+    #description {
+        font-size: 1.2em;
+    }
+
+    .card {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+
+

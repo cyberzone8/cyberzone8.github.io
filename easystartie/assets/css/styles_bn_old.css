@@ -1,0 +1,257 @@
+/* Estilos generales */
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    background-color: #FFFFFF; /* Fondo blanco puro */
+    text-align: center;
+}
+
+/* Barra de navegación */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Selector de idioma */
+.language-selector {
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 20px 0;
+        text-align: right;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        color: #fff;
+    }
+
+    .language-selector {
+        margin-right: 20px;
+    }
+}
+
+/* Estilos generales de la barra de navegación */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 1000;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #ffa500;
+}
+
+
+/* Encabezado */
+header {
+    background-color: #FFFFFF;
+    padding: 60px 20px;
+    margin-top: 60px; /* Ajuste para evitar superposición con la barra de navegación */
+    border-bottom: 2px solid #333333;
+}
+
+#main-title {
+    font-size: 3.5em;
+    margin-top: 80px;
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+#description {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: #333333;
+}
+
+#explore-services {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 50px;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+#explore-services:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+/* Sección de servicios */
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.card {
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 40px;
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333333;
+}
+
+.card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    color: #000000;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #333333;
+    font-size: 1.1em;
+}
+
+.card {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+/* Sección de contacto */
+.contact {
+    background-color: #000000;
+    padding: 40px;
+    margin-top: 40px;
+    color: #FFFFFF;
+}
+
+.contact h2 {
+    margin: 0 0 20px 0;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+}
+
+.contact button {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+    transform: scale(1.05);
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #ff6600;
+}
+
+
+/* Selector de idioma */
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 10;
+    background-color: #000000;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    padding: 5px;
+    color: #FFFFFF;
+}
+
+.language-selector select {
+    border: none;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-size: 14px;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Efecto de desplazamiento suave */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+

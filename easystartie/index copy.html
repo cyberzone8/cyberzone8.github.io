@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">EasyStartIE - Facilita tu llegada a Irlanda</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"> <!-- Favicon -->
+    <script defer src="./assets/js/scripts.js"></script>
+</head>
+<body>
+
+<header>
+    <img src="./assets/img/easystartie.png" alt="EasyStartIE Logo" class="logo">
+    <!-- <h1 id="main-title">EasyStartIE</h1> -->
+    <p id="description">Facilitamos tu llegada a Irlanda, ayudándote a gestionar toda tu documentación básica.</p>
+    <a href="#services" class="button" id="explore-services">Explora Nuestros Servicios</a>
+</header>
+
+<main>
+    <section id="services" class="services">
+        <div class="card">
+            <h3 id="product1_title">LIP Card</h3>
+            <p id="product1_description">Ayuda con la LIP Card</p>
+        </div>
+        <div class="card">
+            <h3 id="product2_title">Bike Card</h3>
+            <p id="product2_description">Tarjeta para uso de bicicletas</p>
+        </div>
+        <div class="card">
+            <h3 id="product3_title">Cuenta Bancaria</h3>
+            <p id="product3_description">Apertura de cuenta bancaria</p>
+        </div>
+        <div class="card">
+            <h3 id="product4_title">IRP</h3>
+            <p id="product4_description">Registro IRP</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2 id="ready-title">¿Listo para comenzar tu nueva vida en Irlanda?</h2>
+        <p id="contact-description">¡Nos encantaría ayudarte! Reserva una cita para discutir cómo podemos facilitarte la gestión de tus trámites.</p>
+        <button id="contact-button" onclick="window.location.href='https://example.com/reserva-cita'">Reserva tu cita</button>
+    </section>
+    
+</main>
+
+<footer>
+    <p id="footer_text">© 2024 EasyStartIE - Todos los derechos reservados</p>
+    <div class="social-links">
+        <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+    </div>
+</footer>
+
+<!-- Selector de idioma -->
+<div class="language-selector">
+    <select onchange="changeLanguage(this.value)">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+        <option value="pt">Português</option>
+        <option value="zh">中文</option>
+    </select>
+</div>
+
+</body>
+</html>
