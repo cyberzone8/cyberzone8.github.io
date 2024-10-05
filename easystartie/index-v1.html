@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">EasyStartIE - Facilita tu llegada a Irlanda</title>
+    <link rel="stylesheet" href="assets/css/styles_bn.css">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="./assets/js/scripts.js"></script>
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<nav id="navbar">
+    <div class="nav-container">
+        <a href="#home" class="logo">EasyStartIE</a>
+        <div class="nav-links">
+            <a href="#services">Servicios</a>
+            <a href="#contact">Contacto</a>
+
+            <!-- Selector de idioma actualizado con banderas -->
+            <div class="language-selector">
+                <div class="selected-language">
+                    <img src="assets/img/globe-icon.png" alt="Language Icon" class="language-icon">
+                    <span>Español</span> <!-- Idioma seleccionado por defecto -->
+                    <i class="arrow-down-icon"></i>
+                </div>
+                <div class="dropdown-menu hidden">
+                    <input type="text" placeholder="Buscar idioma..." class="language-search">
+                    <ul class="language-list">
+                        <li><img src="assets/img/flag-es.png" alt="Spain Flag"> Español</li>
+                        <li><img src="assets/img/flag-us.png" alt="US Flag"> English</li>
+                        <li><img src="assets/img/flag-pt.png" alt="Portugal Flag"> Português</li>
+                        <li><img src="assets/img/flag-cn.png" alt="China Flag"> 中文 (Chinese)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+<header>
+    <h1 id="main-title">EasyStartIE</h1>
+    <p id="description">Facilitamos tu llegada a Irlanda, ayudándote a gestionar toda tu documentación básica.</p>
+    <a href="#services" class="button" id="explore-services">Explora Nuestros Servicios</a>
+</header>
+
+<main>
+    <section id="services" class="services">
+        <div class="card">
+            <img src="ruta-de-la-imagen.jpg" alt="Servicio 1" class="card-image">
+            <h3>Servicio 1</h3>
+            <p>Descripción del servicio 1.</p>
+        </div>
+        <div class="card">
+            <img src="ruta-de-la-imagen.jpg" alt="Servicio 2" class="card-image">
+            <h3>Servicio 2</h3>
+            <p>Descripción del servicio 2.</p>
+        </div>
+        <!-- Más cards... -->
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 id="ready-title">¿Listo para comenzar tu nueva vida en Irlanda?</h2>
+        <p id="contact-description">¡Nos encantaría ayudarte! Reserva una cita para discutir cómo podemos facilitarte la gestión de tus trámites.</p>
+        <button id="contact-button">Reserva tu cita</button>
+    </section>
+</main>
+
+<footer>
+    <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p id="footer_text">© 2024 EasyStartIE - Todos los derechos reservados</p>
+</footer>
+
+<script>
+    // Menú desplegable para móviles
+    document.getElementById('hamburger').onclick = function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    };
+
+    // Selector de idioma desplegable
+    document.querySelector('.selected-language').onclick = function() {
+        document.querySelector('.dropdown-menu').classList.toggle('hidden');
+    };
+
+    // Filtro de búsqueda de idioma
+    document.querySelector('.language-search').addEventListener('input', function() {
+        let filter = this.value.toUpperCase();
+        let languages = document.querySelectorAll('.language-list li');
+        languages.forEach(function(language) {
+            let text = language.textContent || language.innerText;
+            if (text.toUpperCase().indexOf(filter) > -1) {
+                language.style.display = "";
+            } else {
+                language.style.display = "none";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+

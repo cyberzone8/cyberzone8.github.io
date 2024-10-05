@@ -4,108 +4,270 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title">EasyStartIE - Facilita tu llegada a Irlanda</title>
-    <link rel="stylesheet" href="assets/css/styles_bn.css">
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script defer src="./assets/js/scripts.js"></script>
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Paleta de colores personalizada */
+        .bg-black { background-color: #000 !important; }
+        .bg-gold { background-color: #FFD700 !important; }
+        .text-gold { color: #FFD700 !important; }
+
+        /* Navbar */
+        .navbar-dark .navbar-nav .nav-link {
+            color: #FFD700 !important;
+            transition: color 0.3s ease;
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #fff !important;
+        }
+        .navbar-brand {
+            color: #FFD700 !important;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        header {
+            background-color: #000;
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .btn-gold {
+            background-color: #FFD700;
+            color: black;
+            border: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn-gold:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Servicios */
+        .services {
+            padding: 3rem 1rem;
+            background-color: #f8f9fa;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .learn-more {
+            color: #FFD700;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .learn-more:hover {
+            color: #000;
+        }
+
+        /* Contacto */
+        .contact {
+            padding: 3rem 1rem;
+            background-color: #000;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #FFD700;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        footer p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Barra de navegación -->
-<nav id="navbar">
-    <div class="nav-container">
-        <a href="#home" class="logo">EasyStartIE</a>
-        <div class="nav-links">
-            <a href="#services">Servicios</a>
-            <a href="#contact">Contacto</a>
-
-            <!-- Selector de idioma actualizado con banderas -->
-            <div class="language-selector">
-                <div class="selected-language">
-                    <img src="assets/img/globe-icon.png" alt="Language Icon" class="language-icon">
-                    <span>Español</span> <!-- Idioma seleccionado por defecto -->
-                    <i class="arrow-down-icon"></i>
-                </div>
-                <div class="dropdown-menu hidden">
-                    <input type="text" placeholder="Buscar idioma..." class="language-search">
-                    <ul class="language-list">
-                        <li><img src="assets/img/flag-es.png" alt="Spain Flag"> Español</li>
-                        <li><img src="assets/img/flag-us.png" alt="US Flag"> English</li>
-                        <li><img src="assets/img/flag-pt.png" alt="Portugal Flag"> Português</li>
-                        <li><img src="assets/img/flag-cn.png" alt="China Flag"> 中文 (Chinese)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <button class="hamburger" id="hamburger">
-            <i class="fas fa-bars"></i>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">EasyStartIE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contacto</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
+<!-- Hero Section -->
 <header>
-    <h1 id="main-title">EasyStartIE</h1>
-    <p id="description">Facilitamos tu llegada a Irlanda, ayudándote a gestionar toda tu documentación básica.</p>
-    <a href="#services" class="button" id="explore-services">Explora Nuestros Servicios</a>
+    <h1>Facilitamos tu llegada a Irlanda</h1>
+    <p>Nos encargamos de gestionar la documentación básica para que tu transición sea lo más sencilla posible.</p>
+    <a href="#services" class="btn btn-gold btn-lg">Explora Nuestros Servicios</a>
 </header>
 
+<!-- Servicios Section -->
 <main>
     <section id="services" class="services">
-        <div class="card">
-            <img src="ruta-de-la-imagen.jpg" alt="Servicio 1" class="card-image">
-            <h3>Servicio 1</h3>
-            <p>Descripción del servicio 1.</p>
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./assets/img/images.jfif" class="card-img-top" alt="Cuenta Bancaria">
+                        <div class="card-body">
+                            <h5 class="card-title">Apertura de Cuenta Bancaria</h5>
+                            <p class="card-text">Te orientamos para manejar tus finanzas desde el primer día.</p>
+                            <a href="#contact" class="learn-more">Más Información</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./assets/img/cd9fe36a-e0ea-467b-84e5-2501bc8b2b01.jpg" class="card-img-top" alt="Dirección de Correspondencia">
+                        <div class="card-body">
+                            <h5 class="card-title">Dirección de Correspondencia</h5>
+                            <p class="card-text">Recibe tu correspondencia de manera segura y confiable.</p>
+                            <a href="#contact" class="learn-more">Más Información</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./assets/img/mygovid_logo_white_fulll_logo.png" class="card-img-top" alt="myGov.ie">
+                        <div class="card-body">
+                            <h5 class="card-title">Registro en myGov.ie</h5>
+                            <p class="card-text">Accede a servicios públicos esenciales en Irlanda.</p>
+                            <a href="#contact" class="learn-more">Más Información</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./assets/img/leapcard-logo.png" class="card-img-top" alt="Leap Card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tarjeta de Transporte (Leap Card)</h5>
+                            <p class="card-text">Facilitamos tu acceso al transporte local.</p>
+                            <a href="#contact" class="learn-more">Más Información</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./assets/img/TFI---Bike-Share-logo-Green.png" class="card-img-top" alt="TFI Bikes">
+                        <div class="card-body">
+                            <h5 class="card-title">Registro en TFI Bikes</h5>
+                            <p class="card-text">Muévete de manera sostenible con bicicletas públicas.</p>
+                            <a href="#contact" class="learn-more">Más Información</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./assets/img/NDLS_500x.png" class="card-img-top" alt="NDLS">
+                        <div class="card-body">
+                            <h5 class="card-title">Licencia de Conducir (NDLS)</h5>
+                            <p class="card-text">Información para obtener tu licencia en Irlanda.</p>
+                            <a href="#contact" class="learn-more">Más Información</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./assets/img/Image_Logo.png" class="card-img-top" alt="Departamento de Justicia">
+                        <div class="card-body">
+                            <h5 class="card-title">Asistencia con el Departamento de Justicia</h5>
+                            <p class="card-text">Te guiamos en los trámites de residencia.</p>
+                            <a href="#contact" class="learn-more">Más Información</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <img src="ruta-de-la-imagen.jpg" alt="Servicio 2" class="card-image">
-            <h3>Servicio 2</h3>
-            <p>Descripción del servicio 2.</p>
-        </div>
-        <!-- Más cards... -->
     </section>
 
+    <!-- Contacto Section -->
     <section id="contact" class="contact">
-        <h2 id="ready-title">¿Listo para comenzar tu nueva vida en Irlanda?</h2>
-        <p id="contact-description">¡Nos encantaría ayudarte! Reserva una cita para discutir cómo podemos facilitarte la gestión de tus trámites.</p>
-        <button id="contact-button">Reserva tu cita</button>
+        <h2>¿Listo para comenzar tu nueva vida en Irlanda?</h2>
+        <p>Reserva una cita y comencemos a planificar tu llegada.</p>
+        <a href="https://calendar.app.google/vpv9gJgKSckN45WT9" target="_blank">
+            <button class="btn btn-gold btn-lg">Reserva tu cita</button>
+        </a>
+        
     </section>
 </main>
 
+<!-- Footer -->
 <footer>
-    <div class="social-links">
+    <!-- <div class="social-links">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-    <p id="footer_text">© 2024 EasyStartIE - Todos los derechos reservados</p>
+    </div> -->
+    <p>© 2024 CyberZone8 - Todos los derechos reservados</p>
 </footer>
 
-<script>
-    // Menú desplegable para móviles
-    document.getElementById('hamburger').onclick = function() {
-        document.querySelector('.nav-links').classList.toggle('active');
-    };
-
-    // Selector de idioma desplegable
-    document.querySelector('.selected-language').onclick = function() {
-        document.querySelector('.dropdown-menu').classList.toggle('hidden');
-    };
-
-    // Filtro de búsqueda de idioma
-    document.querySelector('.language-search').addEventListener('input', function() {
-        let filter = this.value.toUpperCase();
-        let languages = document.querySelectorAll('.language-list li');
-        languages.forEach(function(language) {
-            let text = language.textContent || language.innerText;
-            if (text.toUpperCase().indexOf(filter) > -1) {
-                language.style.display = "";
-            } else {
-                language.style.display = "none";
-            }
-        });
-    });
-</script>
-
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
