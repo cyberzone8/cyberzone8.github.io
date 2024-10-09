@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luv.ie - Find Love in Ireland</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Luv.ie</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#matches">Matches</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li><a href="#credits">Buy Credits</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <h2>Meet Irish Singles Near You</h2>
+        <p>Find your match today with a community of singles across Ireland.</p>
+        <a href="#register" class="btn">Join Now</a>
+    </section>
+
+    <section id="register" class="registration-form">
+        <h3>Create Your Profile</h3>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email address">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Create a password">
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Your city">
+
+            <input type="submit" value="Sign Up" class="btn">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Luv.ie | Find Love in Ireland</p>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Evita que la página se recargue
+    
+            // Obtener los datos del formulario
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const location = document.getElementById('location').value;
+    
+            // Validación de campos (opcional, pero recomendado)
+            if (!name || !email || !password || !location) {
+                alert('Por favor, completa todos los campos');
+                return;
+            }
+    
+            // Enviar los datos al backend
+            fetch('http://localhost:5000/api/users/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    password: password,
+                    location: location
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Usuario registrado exitosamente');
+                    // Redirigir o mostrar un mensaje de éxito
+                } else {
+                    alert('Error en el registro: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+    
+</body>
+</html>
