@@ -1,0 +1,26 @@
+header{
+    grid-area: header;
+    background-color: #66f;
+}
+menu{
+grid-area: menu;
+background-color: #66f;
+}
+main{
+grid-area: main;
+background-color: #66f;
+}
+footer{
+grid-area: footer;
+background-color: #66f;
+}
+
+/* agregando contenedor */
+.grid-container{
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "menu main"
+    "footer footer";
+    gap: 10px;
+}
