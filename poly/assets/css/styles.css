@@ -1,0 +1,202 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f5f5f5; /* Color más suave para el fondo general */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #1b2838;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #4ab3f4;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #2f3e4e;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: #ffffff;
+    flex-direction: column;
+}
+
+.hero-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 1.2rem; /* Ajustar el tamaño del párrafo */
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0; /* Eliminar padding y fondo */
+    background-color: transparent; /* Eliminar fondo */
+    border-radius: 0; /* Eliminar bordes redondeados */
+}
+
+.hero-section .btn {
+    background-color: #00b4d8;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-section .btn:hover {
+    background-color: #0077b6;
+}
+
+
+/* Resources Section */
+#resources {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#resources h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Tarjetas de Recursos */
+#resources .card {
+    display: inline-block;
+    width: 280px; /* Tamaño fijo para todas las tarjetas */
+    padding: 20px;
+    margin: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: left; /* Alineación de texto consistente */
+}
+
+#resources .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+#resources .card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+#resources .card p {
+    color: #7f8c8d;
+    font-size: 1rem;
+}
+
+#resources .btn {
+    background-color: #00b74a;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#resources .btn:hover {
+    background-color: #007f3d;
+}
+
+/* History & Culture Section */
+#historia-cultura {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#historia-cultura h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+#historia-cultura .card {
+    display: inline-block;
+    width: 280px; /* Todas las tarjetas del mismo tamaño */
+    padding: 20px;
+    margin: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+}
+
+#historia-cultura .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+#historia-cultura .card h5 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#historia-cultura .card a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+#historia-cultura .card a:hover {
+    color: #2980b9;
+}
+
+/* Footer */
+footer {
+    background-color: #1b2838;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #ecf0f1;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #3498db;
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
