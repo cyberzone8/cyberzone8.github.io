@@ -6,6 +6,8 @@
     <title>EasyStartIE - English</title>
     <link rel="stylesheet" href="../assets/css/en.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- Biblioteca marked.js -->
+    <script src="../assets/js/markdown-loader.js"></script> <!-- Tu script para cargar markdown -->
 </head>
 <body>
 
@@ -52,7 +54,8 @@
                 <div class="card-grid">
                     <div class="card">
                         <h3>B1 Grammar</h3>
-                        <a href="./grammar/b1-verbtenses.md">Access</a>
+                        <div id="markdown-content"></div> <!-- Aquí se cargará el contenido Markdown -->
+                        <a href="javascript:void(0)" onclick="loadMarkdown('./grammar/b1-verbtenses.md', 'markdown-content')">Access</a>
                     </div>
                 </div>
             </div>
