@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyStartIE - English</title>
+    <link rel="stylesheet" href="../assets/css/en.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- Biblioteca marked.js -->
+    <script src="../assets/js/markdwon-loader.js"></script> <!-- Tu script para cargar markdown -->
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Resources</a>
+            <ul class="navbar-links">
+                <li><a href="#fluency">Fluency</a></li>
+                <li><a href="#grammar">Grammar</a></li>
+                <li><a href="#lessons">Lessons</a></li>
+                <li><a href="#phonetics">Phonetics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Welcome to EasyStartIE Resources - English Section</h1>
+            <p>Explore our resources and improve your English skills in fluency, grammar, phonetics, and more.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="fluency" class="section">
+            <div class="container">
+                <h2>Fluency</h2>
+                <p>Improve your speaking skills and become more fluent in English.</p>
+                <!-- <div class="card-grid">
+                    <div class="card">
+                        <h3>B1 Fluency</h3>
+                        <a href="./fluency/b1.md">Access</a>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <section id="grammar" class="section">
+            <div class="container">
+                <h2>Grammar</h2>
+                <p>Master English grammar rules and improve your writing and speaking.</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>B1 Grammar</h3>
+                        <div id="markdown-content"></div> <!-- Aquí se cargará el contenido Markdown -->
+                        <a href="javascript:void(0)" onclick="loadMarkdown('./grammar/b1-verbtenses.md', 'markdown-content')">Access</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lessons" class="section">
+            <div class="container">
+                <h2>Lessons</h2>
+                <p>Access a wide variety of English lessons tailored to different levels.</p>
+                <!-- <div class="card-grid">
+                    <div class="card">
+                        <h3>B1 Lessons</h3>
+                        <a href="./lessons/b1.md">Access</a>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <section id="phonetics" class="section">
+            <div class="container">
+                <h2>Phonetics</h2>
+                <p>Learn correct pronunciation and practice your phonetic skills.</p>
+                <!-- <div class="card-grid">
+                    <div class="card">
+                        <h3>B1 Phonetics</h3>
+                        <a href="./phonetics/b1.md">Access</a>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Polyglot Resources - All rights reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>
