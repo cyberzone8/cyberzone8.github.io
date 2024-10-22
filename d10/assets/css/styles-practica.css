@@ -1,15 +1,176 @@
-@media (max-width: 576px) {
-    body {
-        background: #000000;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mobile */
+body {
+    background-color: #ffffff;
+}
+
+.header {
+    grid-area: header;
+    background-color: #0d47a1;
+    color: #ffffff;
+    padding: 40px;
+
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* Estilos para la clase "icono" */
+.icono {
+    display: flex; /* Usamos Flexbox para alinear la imagen y el texto horizontalmente */
+    align-items: center; /* Alinea verticalmente la imagen y el texto al centro */
+    gap: 10px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilos adicionales para el botón del menú (si es necesario) */
+.hamburger-menu {
+    background-color: transparent; /* Fondo transparente para el botón */
+    border: none; /* Elimina bordes */
+    color: white; /* Color blanco para el texto del botón */
+    font-size: 24px; /* Tamaño del ícono de menú */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.nav-menu {
+    display: none; /* Oculta el nav por defecto en pantallas pequeñas */
+}
+
+.filter {
+    grid-area: filter;
+    background-color: #cecece;
+    color: #000000;
+    padding: 15px;  
+}
+
+.filter.box {
+    width: 100%; /* El contenedor ocupa todo el ancho disponible */
+    padding: 10px; /* Espaciado interno */
+    /* box-sizing: border-box; Incluye el padding en el ancho total */
+    display: flex;
+    flex-direction: column; /* Coloca los hijos uno encima del otro */
+    align-items: center;
+}
+
+.filter.box select {
+    width: 90%; /* El ancho del select se ajusta al contenedor */
+    padding: 8px; /* Espacio interno para mejor usabilidad */
+    font-size: 16px; /* Tamaño de la fuente */
+    box-sizing: border-box; /* Considera padding y bordes en el ancho */
+    max-width: 100%; /* Limita el ancho máximo para evitar que se salga de la pantalla */
+}
+
+.filter {
+    overflow-x: auto; /* Permite desplazamiento horizontal si el contenido excede el tamaño */
+}
+
+.galeria {
+    grid-area: galeria;
+    padding: 50px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+
+/* .card {
+    width: calc(100vw - 100px);
+    height: calc(100vh - 100px - 100px - 50px - 100px - 100px);    
+} */
+
+.paginacion {
+    grid-area: paginacion;
+
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;  */
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #0d47a1;
+    color: white;
+    padding: 10px; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.boxes {
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'filter'
+    'galeria'
+    'paginacion'
+    'footer'
+    ;
+    grid-template-rows: 100px 100px calc(100vh - 100px - 100px - 50px - 100px)  50px 100px;
+}
+
+/* Tablet */
+@media (width >= 768px) {
+    .boxes {
+        grid-template-areas: 
+        'header filter'
+        'header galeria'
+        'header paginacion'
+        'footer footer'
+        ;
+        grid-template-rows: 100px calc(100vh - 100px - 50px - 100px)  50px 100px;
+        grid-template-columns: 300px calc(100vw - 300px);
+    }
+
+    .header {
+        grid-area: header;
+        background-color: #0d47a1;
         color: #ffffff;
-        font-family: monospace;
+        padding: 40px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .hamburger-menu {
+        display: none; /* Oculta el ícono en pantallas grandes */
+    }
+
+    .nav-menu {
+        padding: 50px;
+        gap: 20px; /* Espacio entre los enlaces */
+        display: flex; /* Muestra el nav como un contenedor flex */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu a {
+        color: white; /* Color de los enlaces */
+        text-decoration: none; /* Elimina el subrayado de los enlaces */
+        font-size: 18px; /* Tamaño de la fuente */
+    }
+
+    .nav-menu a:hover {
+        color: #FFD700; /* Cambia el color al pasar el ratón */
     }
 } 
 
-@media (min-width: 576px) {
-    body {
-        background: #749c2c;
-        color: #f2f2f2;
-        font-family: fantasy;
+/* Laptop */
+@media (width >= 1200px) {
+    .boxes {
+        grid-template-areas: 
+        'header filter'
+        'header galeria'
+        'footer paginacion'
+        ;
+        grid-template-rows: 100px calc(100vh - 100px - 100px)  100px;
     }
 }
