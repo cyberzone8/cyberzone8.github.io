@@ -75,6 +75,17 @@ header p {
     text-align: center;
 }
 
+/* Aplica el filtro de blanco y negro a las imágenes */
+.card img {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease; /* Transición suave */
+}
+
+/* Cuando el cursor está sobre la imagen, se remueve el filtro */
+.card:hover img {
+    filter: grayscale(0%); /* Recupera el color original */
+}
+
 .learn-more {
     color: #FFD700;
     font-weight: bold;

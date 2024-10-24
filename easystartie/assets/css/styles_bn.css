@@ -212,6 +212,16 @@ header {
     color: #333333;
 }
 
+/* Aplica el filtro de blanco y negro a las imágenes */
+.card img {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease; /* Transición suave */
+}
+
+/* Cuando el cursor está sobre la imagen, se remueve el filtro */
+.card:hover img {
+    filter: grayscale(0%); /* Recupera el color original */
+}
 .card:hover {
     transform: translateY(-20px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
