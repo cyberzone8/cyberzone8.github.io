@@ -1,0 +1,222 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0d47a1;
+    color: white;
+    padding: 10px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    margin-right: 10px;
+}
+
+.menu-mobile .hamburger-menu {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-desktop {
+    display: none;
+}
+
+.filters {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 10px;
+}
+
+.filters label {
+    margin-right: 10px;
+}
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.product {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 1rem;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Paginación */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination span {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #0d47a1;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination .active {
+    background-color: #ffeb3b;
+    color: black;
+}
+
+/* Botones de navegación */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #0d47a1;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+footer .social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer .social a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilo Mobile */
+@media (max-width: 576px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .menu-desktop {
+        display: none;
+    }
+
+    .product {
+        min-width: 100%;
+    }
+}
+
+/* Estilo Tablet (576px - 992px) */
+@media (min-width: 576px) and (max-width: 992px) {
+    header {
+        padding: 20px;
+    }
+
+    .filters {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .carousel-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product {
+        min-width: 50%;
+        padding: 1rem;
+    }
+
+    /* Paginación estilo tablet */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .pagination span {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .social {
+        margin-bottom: 10px;
+    }
+}
+
+/* Estilo Desktop (más de 992px) */
+@media (min-width: 992px) {
+    .filters {
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .carousel-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .product {
+        min-width: 25%;
+        padding: 1rem;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

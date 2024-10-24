@@ -1,222 +1,232 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header {
+/* Mobile */
+body {
+    background-color: #ffffff;
+}
+
+/* Estructura de diseño general */
+.boxes {
+    display: grid;
+    grid-template-areas:
+        'header'
+        'filter'
+        'galeria'
+        'paginacion'
+        'footer';
+    grid-template-rows: 100px 100px auto 50px 100px;
+    height: 100vh; /* Asegura que la altura de las cajas ocupe toda la pantalla */
+}
+
+/* Header */
+.header {
+    grid-area: header;
     background-color: #0d47a1;
-    color: white;
-    padding: 10px;
-    
+    color: #ffffff;
+    padding: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header .logo {
+.icono {
     display: flex;
     align-items: center;
-}
-
-header .logo img {
-    margin-right: 10px;
-}
-
-.menu-mobile .hamburger-menu {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-}
-
-.menu-desktop {
-    display: none;
-}
-
-.filters {
-    background-color: #f5f5f5;
-    text-align: center;
-    padding: 10px;
-}
-
-.filters label {
-    margin-right: 10px;
-}
-
-/* Carrusel */
-.carousel {
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.product {
-    min-width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 1rem;
-}
-
-.product img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* Paginación */
-.pagination {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.pagination span {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 0 5px;
-    background-color: #0d47a1;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.pagination .active {
-    background-color: #ffeb3b;
-    color: black;
-}
-
-/* Botones de navegación */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
-}
-
-/* Footer */
-footer {
-    background-color: #0d47a1;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-footer .social {
-    display: flex;
-    justify-content: center;
     gap: 10px;
 }
 
-footer .social a {
+.hamburger-menu {
+    background-color: transparent;
+    border: none;
     color: white;
-    text-decoration: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-/* Estilo Mobile */
-@media (max-width: 576px) {
-    .hamburger-menu {
-        display: block;
+.nav-menu {
+    display: none;
+}
+
+/* Filter */
+.filter {
+    grid-area: filter;
+    background-color: #cecece;
+    color: #000000;
+    padding: 15px;
+}
+
+.filter.box {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter.box select {
+    width: 90%;
+    padding: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Galeria */
+.galeria {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna por defecto en pantallas pequeñas */
+    gap: 20px;
+    justify-items: center; /* Centrar las tarjetas horizontalmente */
+    overflow-y: auto; /* Permitir el desplazamiento vertical */
+    max-height: calc(100vh - 100px - 100px - 50px - 100px); /* Altura máxima para que no tape el footer */
+    padding: 10px; /* Añadir un poco de padding para un diseño más limpio */
+}
+
+.card {
+    max-width: 300px;
+    width: 100%; /* Asegura que las tarjetas ocupen todo el ancho posible */
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #0d47a1;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #003f7f;
+}
+
+/* Paginacion */
+.paginacion {
+    grid-area: paginacion;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.paginacion ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    padding: 0;
+}
+
+.paginacion ul li {
+    display: inline;
+}
+
+.paginacion ul li a {
+    color: #0d47a1;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.paginacion ul li a:hover {
+    background-color: #0d47a1;
+    color: white;
+}
+
+.paginacion ul li a.active {
+    background-color: #0d47a1;
+    color: white;
+}
+
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #0d47a1;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Tablet: Mostrar dos tarjetas */
+@media (min-width: 768px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas de tablet */
     }
 
-    .menu-desktop {
+    .boxes {
+        grid-template-areas:
+            'header header'
+            'filter galeria'
+            'filter paginacion'
+            'footer footer';
+        grid-template-rows: 100px calc(100vh - 100px - 50px - 100px) 50px 100px;
+        grid-template-columns: 300px calc(100vw - 300px);
+    }
+
+    .header {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .hamburger-menu {
         display: none;
     }
 
-    .product {
-        min-width: 100%;
-    }
-}
-
-/* Estilo Tablet (576px - 992px) */
-@media (min-width: 576px) and (max-width: 992px) {
-    header {
-        padding: 20px;
-    }
-
-    .filters {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-    }
-
-    .carousel-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    .product {
-        min-width: 50%;
-        padding: 1rem;
-    }
-
-    /* Paginación estilo tablet */
-    .pagination {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-    }
-
-    .pagination span {
-        font-size: 1rem;
-        padding: 8px 12px;
-    }
-
-    footer {
+    .nav-menu {
+        padding: 50px;
+        gap: 20px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        padding: 20px;
     }
 
-    .social {
-        margin-bottom: 10px;
+    .nav-menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .nav-menu a:hover {
+        color: #FFD700;
     }
 }
 
-/* Estilo Desktop (más de 992px) */
-@media (min-width: 992px) {
-    .filters {
-        text-align: left;
-        padding: 1rem;
+/* Laptop: Mostrar tres tarjetas */
+@media (min-width: 1200px) {
+    .galeria {
+        grid-template-columns: repeat(4, 1fr); /* Tres columnas en pantallas grandes */
     }
 
-    .carousel-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-    }
-
-    .product {
-        min-width: 25%;
-        padding: 1rem;
-    }
-
-    footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .boxes {
+        grid-template-areas:
+            'header filter'
+            'header galeria'
+            'footer paginacion';
+        grid-template-rows: 100px calc(100vh - 100px - 100px) 100px;
     }
 }
