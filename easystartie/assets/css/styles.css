@@ -131,3 +131,20 @@ footer p {
     margin-top: 1rem;
     font-size: 0.9rem;
 }
+
+/* Estilos del navbar para alinear el menú a la derecha en mobile */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        text-align: right; /* Alinea el contenido del menú a la derecha */
+    }
+
+    .navbar-nav {
+        width: 100%; /* Asegura que el menú ocupe todo el ancho */
+        display: flex;
+        justify-content: flex-end; /* Justifica los elementos hacia el final (derecha) */
+    }
+    
+    .navbar-nav .nav-item {
+        margin-left: 10px; /* Opcional, para agregar espacio entre los elementos */
+    }
+}
