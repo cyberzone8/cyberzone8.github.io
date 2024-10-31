@@ -1,0 +1,144 @@
+/* Contenedor general */
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #00bfa5, #1a237e);
+    color: white;
+  }
+  
+  /* Encabezado */
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para el marcador */
+  #resultados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    font-size: 1.1em;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Separar el marcador de disparos y los barcos */
+  #disparosDisplay {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #marcadorBarcos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1em;
+  }
+  
+  /* Tablero de juego */
+  #tablero {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    gap: 2px;
+    margin: 20px 0;
+  }
+  
+  /* Casillas del tablero */
+  .casilla {
+    width: 40px;
+    height: 40px;
+    background-color: #4a90e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+  }
+  
+  .casilla:nth-child(even) { background-color: #3b79c2; }
+  .casilla:hover { background-color: #2b6db0; transform: scale(1.1); }
+  
+  .contenido {
+    display: none;
+  }
+  
+  /* Efectos de barcos */
+  .contenido.barco {
+    color: red;
+    font-size: 1.5em;
+    animation: barcoAppear 0.5s ease;
+  }
+  
+  .contenido.hit {
+    color: orange;
+    font-size: 2em;
+    animation: explosion 0.6s ease-out;
+  }
+  
+  .contenido.fallo {
+    color: #B0BEC5;
+    font-size: 1.5em;
+    animation: rippleEffect 0.6s ease-out;
+  }
+  
+  /* Animaciones */
+  @keyframes barcoAppear {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes explosion {
+    0% { transform: scale(0); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 0; }
+  }
+  
+  @keyframes rippleEffect {
+    0% { transform: scale(0); opacity: 0.8; }
+    100% { transform: scale(2.5); opacity: 0; }
+  }
+  
+  .casilla.girado {
+    background-color: #e2e2e2;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6), inset 1px 1px 10px rgba(0, 0, 0, 0.2);
+    animation: highlight 0.5s ease-in-out;
+  }
+  
+  @keyframes highlight {
+    0% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.6); }
+    50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.6); }
+  }
+  
+  /* Botón de reinicio */
+  #boton-reiniciar {
+    background: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #boton-reiniciar:hover {
+    background: #388E3C;
+  }
+  
+  

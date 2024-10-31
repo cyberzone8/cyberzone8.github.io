@@ -3,141 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Battleship en Tablero de Ajedrez</title>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-family: Arial, sans-serif;
-    }
-
-    #tablero {
-      display: grid;
-      grid-template-columns: repeat(8, 40px);
-      grid-template-rows: repeat(8, 40px);
-      gap: 2px;
-      margin-top: 20px;
-    }
-
-    .celda {
-      width: 40px;
-      height: 40px;
-      background-color: #f0d9b5;
-      border: 1px solid #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2em;
-      cursor: pointer;
-    }
-
-    .celda:nth-child(even) {
-      background-color: #b58863;
-    }
-
-    .nave {
-      background-color: #ff6347; /* Color para indicar un barco enemigo */
-    }
-
-    .agua {
-      background-color: #1e90ff; /* Color para indicar un fallo */
-    }
-
-    #info {
-      margin-top: 15px;
-      font-size: 1.2em;
-    }
-
-    #boton-reiniciar {
-      margin-top: 15px;
-      padding: 10px 20px;
-      font-size: 1em;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #boton-reiniciar:hover {
-      background-color: #45a049;
-    }
-  </style>
+  <title>Batalla Naval - You v/s IA</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
-
-  <h1>Battleship en Tablero de Ajedrez</h1>
-  <div id="info">Disparos restantes: <span id="disparos">10</span></div>
-  <div id="tablero"></div>
-  <button id="boton-reiniciar">Reiniciar</button>
-
-  <script>
-    const tablero = document.getElementById('tablero');
-    const disparosDisplay = document.getElementById('disparos');
-    const botonReiniciar = document.getElementById('boton-reiniciar');
-
-    let disparosRestantes = 10;
-    let navesEnemigas = [];
-    let navesHundidas = 0;
-    const totalNaves = 5; // Número de naves ocultas
-
-    // Inicializar el tablero y el juego
-    function iniciarJuego() {
-      tablero.innerHTML = '';
-      disparosRestantes = 10;
-      navesHundidas = 0;
-      disparosDisplay.textContent = disparosRestantes;
-      navesEnemigas = generarNavesAleatorias();
-
-      // Crear celdas del tablero
-      for (let i = 0; i < 64; i++) {
-        const celda = document.createElement('div');
-        celda.classList.add('celda');
-        celda.dataset.index = i;
-        celda.addEventListener('click', manejarDisparo);
-        tablero.appendChild(celda);
-      }
-    }
-
-    // Genera las posiciones aleatorias de las naves enemigas
-    function generarNavesAleatorias() {
-      const posiciones = new Set();
-      while (posiciones.size < totalNaves) {
-        posiciones.add(Math.floor(Math.random() * 64));
-      }
-      return Array.from(posiciones);
-    }
-
-    // Maneja el disparo del jugador
-    function manejarDisparo(event) {
-      const index = parseInt(event.target.dataset.index);
-
-      // Validar si el jugador aún tiene disparos restantes
-      if (disparosRestantes > 0 && !event.target.classList.contains('nave') && !event.target.classList.contains('agua')) {
-        disparosRestantes--;
-        disparosDisplay.textContent = disparosRestantes;
-
-        if (navesEnemigas.includes(index)) {
-          event.target.classList.add('nave');
-          navesHundidas++;
-        } else {
-          event.target.classList.add('agua');
-        }
-
-        // Verificar si el jugador ha hundido todas las naves
-        if (navesHundidas === totalNaves) {
-          setTimeout(() => alert('¡Victoria! Has hundido todas las naves enemigas.'), 100);
-        } else if (disparosRestantes === 0) {
-          setTimeout(() => alert('¡Fin del juego! No te quedan disparos.'), 100);
-        }
-      }
-    }
-
-    // Reiniciar el juego
-    botonReiniciar.addEventListener('click', iniciarJuego);
-    iniciarJuego();
-  </script>
-
+  <div class="container">
+    <header>
+      <h1>Batalla Naval - IA</h1>
+      <section id="resultados">
+        <div id="disparosDisplay">Disparos restantes (Jugador): 16</div>
+        <div id="marcadorBarcos">
+          <span id="scoreEnemigosDisplay">Barcos enemigos hundidos: 0</span> |
+          <span id="scoreAliadosDisplay">Barcos aliados hundidos: 0</span>
+        </div>
+      </section>
+    </header>
+    
+    <main>
+      <section id="tablero" aria-label="Tablero de juego"></section>
+    </main>
+    
+    <footer>
+      <button id="boton-reiniciar">Reiniciar Juego</button>
+    </footer>
+  </div>
+  <script src="./assets/js/scripts.js"></script>
 </body>
 </html>
