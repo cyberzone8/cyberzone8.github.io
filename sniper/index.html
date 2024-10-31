@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atrapa el Círculo</title>
+  <title>Atrapa los Círculos</title>
   <style>
     * {
       margin: 0;
@@ -13,10 +13,11 @@
 
     body {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       height: 100vh;
-      background-color: #f0f0f0;
+      background-color: #f7f7f7;
       font-family: Arial, sans-serif;
     }
 
@@ -28,47 +29,135 @@
       border-radius: 15px;
       background-color: #fff;
       overflow: hidden;
+      margin-bottom: 20px;
     }
 
-    #circulo {
+    .circulo {
       position: absolute;
-      width: 50px;
-      height: 50px;
-      background-color: #ff5c5c;
       border-radius: 50%;
-      transition: transform 0.2s ease-in-out;
+      background-color: #ff5c5c;
+      transition: transform 0.1s ease-in-out;
+      cursor: pointer;
+    }
+
+    #info {
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+      margin-bottom: 10px;
+    }
+
+    #puntuacion, #tiempo, #nivel {
+      font-size: 1.2em;
+    }
+
+    #boton-reiniciar {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #boton-reiniciar:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <div id="juego">
-    <div id="circulo"></div>
+  <div id="info">
+    <span id="puntuacion">Puntuación: 0</span>
+    <span id="nivel">Nivel: 1</span>
+    <span id="tiempo">Tiempo: 30</span>
   </div>
+  <div id="juego"></div>
+  <button id="boton-reiniciar">Reiniciar</button>
 
   <script>
-    const circulo = document.getElementById('circulo');
     const juego = document.getElementById('juego');
-    let puntos = 0;
+    const puntuacionDisplay = document.getElementById('puntuacion');
+    const tiempoDisplay = document.getElementById('tiempo');
+    const nivelDisplay = document.getElementById('nivel');
+    const botonReiniciar = document.getElementById('boton-reiniciar');
+    
+    let puntuacion = 0;
+    let tiempo = 30;
+    let nivel = 1;
+    let intervaloMovimiento;
+    let intervaloTiempo;
 
-    function moverCirculo() {
-      const juegoWidth = juego.offsetWidth - circulo.offsetWidth;
-      const juegoHeight = juego.offsetHeight - circulo.offsetHeight;
+    function generarCirculos() {
+      juego.innerHTML = '';
+      const cantidadCirculos = nivel; // Incrementa el número de círculos con cada nivel.
+      const tamañoCirculo = Math.max(50 - nivel * 3, 15); // Reduce el tamaño del círculo a medida que sube el nivel.
+      const velocidad = Math.max(1000 - nivel * 80, 200); // Aumenta la velocidad con cada nivel.
+
+      for (let i = 0; i < cantidadCirculos; i++) {
+        const circulo = document.createElement('div');
+        circulo.classList.add('circulo');
+        circulo.style.width = `${tamañoCirculo}px`;
+        circulo.style.height = `${tamañoCirculo}px`;
+        moverCirculo(circulo, tamañoCirculo);
+        circulo.addEventListener('click', () => {
+          puntuacion++;
+          puntuacionDisplay.textContent = `Puntuación: ${puntuacion}`;
+          // Cambio de color y forma al hacer clic
+          circulo.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+          circulo.style.borderRadius = Math.random() > 0.5 ? '0%' : '50%';
+          moverCirculo(circulo, tamañoCirculo); // Cambia posición al hacer clic
+          
+          if (puntuacion >= nivel * 5) { // Avanza al siguiente nivel cada 5 puntos por nivel
+            avanzarNivel();
+          }
+        });
+        juego.appendChild(circulo);
+      }
+
+      clearInterval(intervaloMovimiento);
+      intervaloMovimiento = setInterval(() => {
+        document.querySelectorAll('.circulo').forEach(circulo => moverCirculo(circulo, tamañoCirculo));
+      }, velocidad);
+    }
+
+    function moverCirculo(circulo, tamañoCirculo) {
+      const juegoWidth = juego.offsetWidth - tamañoCirculo;
+      const juegoHeight = juego.offsetHeight - tamañoCirculo;
       const x = Math.random() * juegoWidth;
       const y = Math.random() * juegoHeight;
-
       circulo.style.transform = `translate(${x}px, ${y}px)`;
     }
 
-    circulo.addEventListener('click', () => {
-      puntos++;
-      moverCirculo();
+    function avanzarNivel() {
+      nivel++;
+      nivelDisplay.textContent = `Nivel: ${nivel}`;
+      generarCirculos();
+    }
 
-      if (puntos % 10 === 0) {
-        alert(`¡Llevas ${puntos} puntos! ¡Sigue así!`);
-      }
-    });
+    function iniciarJuego() {
+      puntuacion = 0;
+      tiempo = 30;
+      nivel = 1;
+      puntuacionDisplay.textContent = `Puntuación: ${puntuacion}`;
+      tiempoDisplay.textContent = `Tiempo: ${tiempo}`;
+      nivelDisplay.textContent = `Nivel: ${nivel}`;
+      generarCirculos();
+      
+      clearInterval(intervaloTiempo);
+      intervaloTiempo = setInterval(() => {
+        tiempo--;
+        tiempoDisplay.textContent = `Tiempo: ${tiempo}`;
+        if (tiempo <= 0) {
+          clearInterval(intervaloTiempo);
+          clearInterval(intervaloMovimiento);
+          alert(`¡Fin del juego! Puntuación final: ${puntuacion}`);
+        }
+      }, 1000);
+    }
 
-    setInterval(moverCirculo, 500);
+    botonReiniciar.addEventListener('click', iniciarJuego);
+    iniciarJuego(); // Comienza el juego automáticamente
   </script>
 </body>
 </html>
