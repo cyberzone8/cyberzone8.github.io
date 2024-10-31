@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atrapa el Círculo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    #juego {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 2px solid #333;
+      border-radius: 15px;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    #circulo {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #ff5c5c;
+      border-radius: 50%;
+      transition: transform 0.2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="juego">
+    <div id="circulo"></div>
+  </div>
+
+  <script>
+    const circulo = document.getElementById('circulo');
+    const juego = document.getElementById('juego');
+    let puntos = 0;
+
+    function moverCirculo() {
+      const juegoWidth = juego.offsetWidth - circulo.offsetWidth;
+      const juegoHeight = juego.offsetHeight - circulo.offsetHeight;
+      const x = Math.random() * juegoWidth;
+      const y = Math.random() * juegoHeight;
+
+      circulo.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    circulo.addEventListener('click', () => {
+      puntos++;
+      moverCirculo();
+
+      if (puntos % 10 === 0) {
+        alert(`¡Llevas ${puntos} puntos! ¡Sigue así!`);
+      }
+    });
+
+    setInterval(moverCirculo, 500);
+  </script>
+</body>
+</html>
