@@ -48,5 +48,33 @@
         "link": "https://drive.google.com/your_link"
       }
     ]
+  },
+  "resources": {
+    "title": "Recursos",
+    "subcategories": [
+      {
+        "name": "sitios recurrentes",
+        "content": [
+          { "name": "Domestika", "link": "https://www.domestika.org/es/my_courses" },
+          { "name": "Domestika", "link": "https://www.domestika.org/es/my_courses" }
+        ]
+      },
+      {
+        "name": "Herramientas de alojamiento web",
+        "content": [
+          { "name": "github", "link": "https://github.com/cyberzone8" },
+          { "name": "glitch", "link": "https://glitch.com/" },
+          { "name": "railway", "link": "https://railway.app/" },
+          { "name": "replit", "link": "https://replit.com/" }
+        ]
+      },
+      {
+        "name": "Plantillas para startups",
+        "content": [
+          { "name": "Analisis Competidor", "link": "https://docs.google.com/document/d/1-akv1frcMUhZbUtGQg-HMewsgYtgXOuCOz9l3qxVSEk/edit?usp=drive_link" },
+          { "name": "Cliente", "link": "https://docs.google.com/document/d/1gsnG0NGx4hp9AVRrENMBhTnLQMWJ_ykdpjel_t_FjOY/edit?usp=drive_link" }
+        ]
+      }
+    ]
   }
 }
