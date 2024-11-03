@@ -31,13 +31,20 @@
     ]
   }, 
   "prototype": {
-    "title":"Product Minimun Viability: 1) identificar necesidades (Persona de Usuario y Customer Journey Map)",
+    "title":"Product Minimun Viability: 1) identificar necesidades (Persona de Usuario y Customer Journey Map, Duración: 1-2 días.)",
     "content": [
-      {"name":"MVP", "link":"https://docs.google.com/document/d/1Ac3AGp59MiXA8K-wteW84Kxz82b79lhyOXH2X63uIbo/edit?usp=drive_link"},
+      {"name":"MVP (5 a 6 días)", "link":"https://docs.google.com/document/d/1Ac3AGp59MiXA8K-wteW84Kxz82b79lhyOXH2X63uIbo/edit?usp=drive_link"},
       { "name": "Persona objetivo", "link": "https://drive.google.com/file/d/112NPrHiJJCa36bTghdYz6dCZZbToNtBO/view?usp=drive_link" },
       { "name": "Customer journey", "link": "https://docs.google.com/document/d/14RKIjPt97ktcf8uzodeVN-z-xa6O2BLwJBzN4BA_lms/edit?usp=drive_link" }
     ]
   },
+  "usabilidad": {
+    "title": "Test de usabilidad (3 a 4 días)",
+    "content": [
+          { "name": "Figma", "link": "https://drive.google.com/drive/folders/1oYhhNrcE_4LDtDZQ1TPYQkzQmeg2gxBr?usp=drive_link" },
+          { "name": "Análisis de Feedback", "link": "https://drive.google.com/drive/folders/1EjMRTXMAS1u3dM9MYduqerVN6SPa0z_Z?usp=drive_link" }
+        ]
+      },
   "resources": {
     "title": "sitios recurrentes",
     "content": [
