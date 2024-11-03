@@ -1,0 +1,53 @@
+{
+  "strategy":{
+    "title": "Branding del equipo",
+    "content": [
+      { "name": "Branding Corporativo", "link": "https://docs.google.com/document/d/1vxRNCW9q5gfQSnntpL-smpGrluxK_nGYEVGbGF2ZNv8/edit?usp=drive_link" }
+    ]
+  },
+  "idea": {
+    "title": "Idea: Definir el problema y la hipótesis de negocio. (Duración 1 o 2 días.) Usar plantilla Lean Canvas",
+    "content": [
+        { "name": "Carpeta - Proyectos", "link": "https://drive.google.com/drive/folders/13cqfzJlZ3LTKCOqrIs5rXiVPZ-iSoVNR?usp=drive_link" },
+        { "name": "Template - Lean Canvas (Hacer una copia)", "link": "https://docs.google.com/document/d/1SgG2a-QXvPxM93R5VsT6Zny2KyMbo7NvCqcPjPY4hJM/edit?usp=drive_link"},
+        { "name": "Template - Análisis Competidor", "link": "https://docs.google.com/document/d/1uFoYlISwNJ_h44l2ER65yo0jSOf-rGDwIXfwCxjyxuA/edit?usp=drive_link" },
+        { "name": "Carpeta - Encuestas", "link": "https://drive.google.com/drive/folders/1hDtCNsOXQnli8NVN4SN4lJ1NUPE77jGT?usp=drive_link" },
+        { "name": "Template - Cliente", "link": "https://docs.google.com/document/d/1VOUOoT9gmqru-BOQzuZNEtwz4bPW5EQp-cE9bY76mH8/edit?usp=drive_link" }
+      ]
+  }, 
+  "prototype": {
+    "title":"MVP (5 a 6 días)",
+    "content": [
+      {"name":"Guia - MVP (5 a 6 días)", "link":"https://docs.google.com/document/d/1Ac3AGp59MiXA8K-wteW84Kxz82b79lhyOXH2X63uIbo/edit?usp=drive_link"},
+      { "name": "Template - Cliente", "link": "https://docs.google.com/document/d/1VOUOoT9gmqru-BOQzuZNEtwz4bPW5EQp-cE9bY76mH8/edit?usp=drive_link" },
+      { "name": "Template - Customer journey", "link": "https://docs.google.com/document/d/1kqSoTiOoyEXfj9voNGJsVOM0C3nVKKmsP_ns4x1O4bU/edit?usp=drive_link" },
+      { "name": "Template - Brainstorming", "link": "https://docs.google.com/document/d/1F9bK_nh90B0ksUWXp77KQrK2V2W8ASCv-lII9WPeBj4/edit?usp=drive_link"},
+      { "name": "Template - MoSKoW", "link": "https://docs.google.com/document/d/19DZkN4KHfAiokzd8UstClcbbvZo9d0muSq3AafoWu3E/edit?usp=drive_link"},
+      { "name": "Template - MVP MAP", "link": "https://docs.google.com/document/d/1zGDKnf728Ut4JZtxhGfrgOtUcEzaJTYyFw2jirya7dw/edit?usp=drive_link"},
+      { "name": "Businness canvas", "link": "https://docs.google.com/document/d/1-lHRMY_stHGPPfIvQiyNHaujR_RwfWu_/edit?usp=drive_link&ouid=113454429405388875121&rtpof=true&sd=true"}
+    ]
+  },
+  "resources": {
+    "title": "sitios recurrentes",
+    "content": [
+          { "name": "Domestika", "link": "https://www.domestika.org/es/my_courses" },
+          { "name": "Miro", "link": "https://miro.com/welcome/SG1oTktpVCtudm1WMFJUOEE2dXNnb2Z4MFpsSlBmQ2ZYMTJRRFM5TTA3WDMrQnNoemhHemtrMlhtYy9lTFY0WWNtUWg1R3g3QjRzSGhnVjdNbFVpVUFTczV3cER0bDFWczlwdUxqaGhqRzBFSDhxdGlpMEg0cTFheWtsT3puOHghZQ==?share_link_id=24086571305" },
+          { "name": "Figma", "link": "https://drive.google.com/drive/folders/1oYhhNrcE_4LDtDZQ1TPYQkzQmeg2gxBr?usp=drive_link" }
+        ]
+      },
+  "repositories": {
+    "title": "Herramientas de alojamiento web",
+    "content": [
+      { "name": "github", "link": "https://github.com/cyberzone8" },
+      { "name": "glitch", "link": "https://glitch.com/" },
+      { "name": "railway", "link": "https://railway.app/" },
+      { "name": "replit", "link": "https://replit.com/" }
+        ]
+      },
+  "templates": {
+    "title": "Plantillas para startups",
+    "content": [
+      { "name": "Design Thinking", "link": "https://docs.google.com/document/d/10omvonm4_FBxggsHMX5HLagd1ejBwkBIkggTayCI7VI/edit?usp=drive_link"}
+    ]
+  }
+}

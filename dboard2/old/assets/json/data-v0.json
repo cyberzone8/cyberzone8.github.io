@@ -1,0 +1,77 @@
+{
+  "idea": {
+    "title": "Concepción de la Idea",
+    "content": [
+        { "name": "AppEnergia", "link": "https://docs.google.com/document/d/10DVRCuQIAhigXiQvrTXuLrxQ6wJfFOyNPw7_rBX7wBE/edit?usp=drive_link" },
+        { "name": "AppJuego", "link": "https://docs.google.com/document/d/1E-1iIngEKULlu3iu8ZYIUGYJClyiXHfc-8wHnxQXkbQ/edit?usp=drive_link" },
+        { "name": "EasyStartIE", "link": "https://docs.google.com/document/d/12qaV-UOYE8oGZfoN1SlQhTnX56PgcMaskJ6df3ZcgWc/edit?usp=drive_link" },
+        { "name": "AppArriendo", "link": "https://docs.google.com/document/d/1NVMI2NRdWuSQzjx8Tlx4o6LiF4dAyP9tZ8kvILJeX_I/edit?usp=drive_link" },
+        { "name": "AppWestern", "link": "https://docs.google.com/document/d/1ELUBZTIw6JYLW1yL13yzStXJNy78urIgt3K8jlIebrM/edit?usp=drive_link" }
+    ]
+  },
+  "market": {
+    "title": "Análisis de Mercado",
+    "content": [
+      { "name": "Matriz", "link": "https://docs.google.com/document/d/1ibUNdLCsG6QL8hYeLXbx2ij-97Dk2N_i-FOiF7ZLffs/edit?usp=drive_link" },
+      { "name": "Hospedaje", "link": "https://drive.google.com/your_link" },
+      {
+        "name": "Alojamiento Temporal",
+        "link": "https://drive.google.com/your_link"
+      },
+      {
+        "name": "Estudio, Trabajo",
+        "link": "https://drive.google.com/your_link"
+      },
+      { "name": "AirBnB", "link": "https://drive.google.com/your_link" },
+      { "name": "Transporte", "link": "https://drive.google.com/your_link" },
+      { "name": "Calefacción", "link": "https://drive.google.com/your_link" },
+      { "name": "Energía", "link": "https://drive.google.com/your_link" },
+      {
+        "name": "Entretenimiento",
+        "link": "https://drive.google.com/your_link"
+      },
+      { "name": "Educación", "link": "https://drive.google.com/your_link" },
+      { "name": "Orientación", "link": "https://drive.google.com/your_link" },
+      {
+        "name": "Viaje al Extranjero",
+        "link": "https://drive.google.com/your_link"
+      },
+      {
+        "name": "Autorrealización",
+        "link": "https://drive.google.com/your_link"
+      },
+      {
+        "name": "Vivir Experiencias",
+        "link": "https://drive.google.com/your_link"
+      }
+    ]
+  },
+  "resources": {
+    "title": "Recursos",
+    "subcategories": [
+      {
+        "name": "sitios recurrentes",
+        "content": [
+          { "name": "Domestika", "link": "https://www.domestika.org/es/my_courses" },
+          { "name": "Domestika", "link": "https://www.domestika.org/es/my_courses" }
+        ]
+      },
+      {
+        "name": "Herramientas de alojamiento web",
+        "content": [
+          { "name": "github", "link": "https://github.com/cyberzone8" },
+          { "name": "glitch", "link": "https://glitch.com/" },
+          { "name": "railway", "link": "https://railway.app/" },
+          { "name": "replit", "link": "https://replit.com/" }
+        ]
+      },
+      {
+        "name": "Plantillas para startups",
+        "content": [
+          { "name": "Analisis Competidor", "link": "https://docs.google.com/document/d/1-akv1frcMUhZbUtGQg-HMewsgYtgXOuCOz9l3qxVSEk/edit?usp=drive_link" },
+          { "name": "Cliente", "link": "https://docs.google.com/document/d/1gsnG0NGx4hp9AVRrENMBhTnLQMWJ_ykdpjel_t_FjOY/edit?usp=drive_link" }
+        ]
+      }
+    ]
+  }
+}
