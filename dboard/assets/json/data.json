@@ -20,8 +20,8 @@
     "title": "Análisis de Mercado: Estudio relacionado con UX/UI y otros aspectos competitivos",
     "content": [
       { "name": "Analisis Competidor", "link": "https://docs.google.com/document/d/1-akv1frcMUhZbUtGQg-HMewsgYtgXOuCOz9l3qxVSEk/edit?usp=drive_link" },
+      {"name": "investigar y validar el problema (Encuestas)", "link": "https://drive.google.com/drive/folders/1EjMRTXMAS1u3dM9MYduqerVN6SPa0z_Z?usp=drive_link"},
       { "name": "Cliente", "link": "https://docs.google.com/document/d/1gsnG0NGx4hp9AVRrENMBhTnLQMWJ_ykdpjel_t_FjOY/edit?usp=drive_link" }
-    
     ]
   },
   "resources": {
@@ -35,10 +35,10 @@
     "title": "Herramientas de alojamiento web",
     "content": [
       { "name": "drive", "link": "https://drive.google.com/drive/folders/1e8PGEkJd5yQhuA1zgxm6NppnZsuQ-CEq?usp=drive_link"}, 
-          { "name": "github", "link": "https://github.com/cyberzone8" },
-          { "name": "glitch", "link": "https://glitch.com/" },
-          { "name": "railway", "link": "https://railway.app/" },
-          { "name": "replit", "link": "https://replit.com/" }
+      { "name": "github", "link": "https://github.com/cyberzone8" },
+      { "name": "glitch", "link": "https://glitch.com/" },
+      { "name": "railway", "link": "https://railway.app/" },
+      { "name": "replit", "link": "https://replit.com/" }
         ]
       },
   "templates": {
