@@ -27,6 +27,7 @@
   "prototype": {
     "title":"Product Minimun Viability: 1) identificar necesidades (Persona de Usuario y Customer Journey Map)",
     "content": [
+      {"name":"MVP", "link":"https://docs.google.com/document/d/1Ac3AGp59MiXA8K-wteW84Kxz82b79lhyOXH2X63uIbo/edit?usp=drive_link"},
       { "name": "Persona objetivo", "link": "https://drive.google.com/file/d/112NPrHiJJCa36bTghdYz6dCZZbToNtBO/view?usp=drive_link" },
       { "name": "Customer journey", "link": "https://docs.google.com/document/d/14RKIjPt97ktcf8uzodeVN-z-xa6O2BLwJBzN4BA_lms/edit?usp=drive_link" }
     ]
