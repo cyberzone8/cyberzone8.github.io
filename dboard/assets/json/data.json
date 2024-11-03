@@ -16,6 +16,12 @@
         { "name": "AppWestern", "link": "https://docs.google.com/document/d/1ELUBZTIw6JYLW1yL13yzStXJNy78urIgt3K8jlIebrM/edit?usp=drive_link" }
     ]
   },
+  "investigar":{
+    "title": "Investigar y validar la idea: Entrevistas a Usuarios Potenciales (Duración: 3-4 días.)",
+    "content": [
+      { "name": "Encuestas", "link": "https://drive.google.com/drive/folders/1EjMRTXMAS1u3dM9MYduqerVN6SPa0z_Z?usp=drive_link" }
+    ]
+  },
   "market": {
     "title": "Análisis de Mercado: Estudio relacionado con UX/UI y otros aspectos competitivos",
     "content": [
