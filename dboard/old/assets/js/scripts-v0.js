@@ -1,7 +1,7 @@
 // Función para cargar el archivo JSON y generar el contenido
 async function loadContent() {
     try {
-      const response = await fetch('./assets/json/data.json');  // Ruta de contenido
+      const response = await fetch('./assets/json/data.json');  // Ajusta la ruta aquí
       const data = await response.json();
       window.dashboardData = data;  // Guardar datos en el objeto global
       showContent('idea');  // Mostrar la primera sección por defecto
