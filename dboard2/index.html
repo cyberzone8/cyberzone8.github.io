@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Startup</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Stage</h2>
+      <ul>
+        <li><button class="stage-btn" onclick="showContent('strategy')">BrandingCorporativo</button></li>
+        <li><button class="stage-btn" onclick="showContent('idea')">Concepción de la idea</button></li>
+        <li><button class="stage-btn" onclick="showContent('prototype')">Prototipo</button></li>
+        <li><button class="stage-btn" onclick="showContent('resources')">Recursos</button></li>
+        <li><button class="stage-btn" onclick="showContent('repositories')">Repositorios</button></li>
+        <li><button class="stage-btn" onclick="showContent('templates')">Plantillas</button></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main id="content" class="content">
+      <!-- El contenido se cargará dinámicamente aquí -->
+    </main>
+  </div>
+
+  <script src="./assets/js/scripts.js"></script>
+</body>
+</html>
