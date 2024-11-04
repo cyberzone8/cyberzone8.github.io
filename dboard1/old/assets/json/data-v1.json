@@ -1,0 +1,57 @@
+{
+    "secciones": [
+      {
+        "id": "inspiracion",
+        "title": "Inspiración",
+        "categorias": [
+          {
+            "name": "Ideas",
+            "items": [
+              { "name": "AppEnergia", "link": "https://docs.google.com/document/d/10DVRCuQIAhigXiQvrTXuLrxQ6wJfFOyNPw7_rBX7wBE/edit?usp=drive_link" },
+              { "name": "AppJuego", "link": "https://docs.google.com/document/d/1E-1iIngEKULlu3iu8ZYIUGYJClyiXHfc-8wHnxQXkbQ/edit?usp=drive_link" }
+            ]
+          },
+          {
+            "name": "Preguntas",
+            "items": [
+              { "name": "Preguntas Clave 1", "link": "https://example.com" },
+              { "name": "Preguntas Clave 2", "link": "https://example.com" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "etapas",
+        "title": "Etapas",
+        "categorias": [
+          {
+            "name": "MVP",
+            "items": [
+              { "name": "MVP1", "link": "https://example.com" },
+              { "name": "MVP2", "link": "https://example.com" }
+            ]
+          },
+          {
+            "name": "Análisis de Mercado",
+            "items": [
+              { "name": "Competidores Directos", "link": "https://example.com" },
+              { "name": "Competidores Indirectos", "link": "https://example.com" }
+            ]
+          },
+          {
+            "name": "Recursos",
+            "items": [
+              {
+                "name": "Lista de Sitios Web",
+                "items": [
+                  { "name": "Alojamiento", "link": "https://example.com" },
+                  { "name": "Cursos", "link": "https://example.com" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
