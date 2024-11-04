@@ -1,0 +1,75 @@
+{
+  "strategy":{
+    "title": "Planifiaciación estratégica - Strategic Planification",
+    "content": [
+      { "name": "Matriz", "link": "https://docs.google.com/document/d/1ibUNdLCsG6QL8hYeLXbx2ij-97Dk2N_i-FOiF7ZLffs/edit?usp=drive_link" }
+    ]
+  },
+  "idea": {
+    "title": "Idea: Definir el problema y la hipótesis de negocio. (1 o 2 días. Usar plantilla Lean Canvas)",
+    "content": [
+        { "name": "AppEnergia", "link": "https://docs.google.com/document/d/10DVRCuQIAhigXiQvrTXuLrxQ6wJfFOyNPw7_rBX7wBE/edit?usp=drive_link" },
+        { "name": "AppJuego", "link": "https://docs.google.com/document/d/1E-1iIngEKULlu3iu8ZYIUGYJClyiXHfc-8wHnxQXkbQ/edit?usp=drive_link" },
+        { "name": "AppArriendo", "link": "https://docs.google.com/document/d/1NVMI2NRdWuSQzjx8Tlx4o6LiF4dAyP9tZ8kvILJeX_I/edit?usp=drive_link" },
+        { "name": "EasyStartIE", "link": "https://docs.google.com/document/d/12qaV-UOYE8oGZfoN1SlQhTnX56PgcMaskJ6df3ZcgWc/edit?usp=drive_link" },
+        { "name": "AppArriendo", "link": "https://docs.google.com/document/d/1NVMI2NRdWuSQzjx8Tlx4o6LiF4dAyP9tZ8kvILJeX_I/edit?usp=drive_link" },
+        { "name": "AppWestern", "link": "https://docs.google.com/document/d/1ELUBZTIw6JYLW1yL13yzStXJNy78urIgt3K8jlIebrM/edit?usp=drive_link" }
+    ]
+  },
+  "investigar":{
+    "title": "Investigar y validar la idea: Entrevistas a Usuarios Potenciales (Duración: 3-4 días.)",
+    "content": [
+      { "name": "Encuestas", "link": "https://drive.google.com/drive/folders/1EjMRTXMAS1u3dM9MYduqerVN6SPa0z_Z?usp=drive_link" }
+    ]
+  },
+  "market": {
+    "title": "Análisis de Mercado: Estudio relacionado con UX/UI y otros aspectos competitivos",
+    "content": [
+      { "name": "Analisis Competidor", "link": "https://docs.google.com/document/d/1-akv1frcMUhZbUtGQg-HMewsgYtgXOuCOz9l3qxVSEk/edit?usp=drive_link" },
+      {"name": "investigar y validar el problema (Encuestas)", "link": "https://drive.google.com/drive/folders/1EjMRTXMAS1u3dM9MYduqerVN6SPa0z_Z?usp=drive_link"},
+      { "name": "Cliente", "link": "https://docs.google.com/document/d/1gsnG0NGx4hp9AVRrENMBhTnLQMWJ_ykdpjel_t_FjOY/edit?usp=drive_link" }
+    ]
+  }, 
+  "prototype": {
+    "title":"Product Minimun Viability: 1) identificar necesidades (Persona de Usuario y Customer Journey Map, Duración: 1-2 días.)",
+    "content": [
+      {"name":"MVP (5 a 6 días)", "link":"https://docs.google.com/document/d/1Ac3AGp59MiXA8K-wteW84Kxz82b79lhyOXH2X63uIbo/edit?usp=drive_link"},
+      { "name": "Persona objetivo", "link": "https://drive.google.com/file/d/112NPrHiJJCa36bTghdYz6dCZZbToNtBO/view?usp=drive_link" },
+      { "name": "Customer journey", "link": "https://docs.google.com/document/d/14RKIjPt97ktcf8uzodeVN-z-xa6O2BLwJBzN4BA_lms/edit?usp=drive_link" }
+    ]
+  },
+  "usabilidad": {
+    "title": "Test de usabilidad (3 a 4 días)",
+    "content": [
+          { "name": "Figma", "link": "https://drive.google.com/drive/folders/1oYhhNrcE_4LDtDZQ1TPYQkzQmeg2gxBr?usp=drive_link" },
+          { "name": "Análisis de Feedback", "link": "https://drive.google.com/drive/folders/1EjMRTXMAS1u3dM9MYduqerVN6SPa0z_Z?usp=drive_link" }
+        ]
+      },
+  "resources": {
+    "title": "sitios recurrentes",
+    "content": [
+          { "name": "Domestika", "link": "https://www.domestika.org/es/my_courses" },
+          { "name": "Miro", "link": "https://miro.com/welcome/SG1oTktpVCtudm1WMFJUOEE2dXNnb2Z4MFpsSlBmQ2ZYMTJRRFM5TTA3WDMrQnNoemhHemtrMlhtYy9lTFY0WWNtUWg1R3g3QjRzSGhnVjdNbFVpVUFTczV3cER0bDFWczlwdUxqaGhqRzBFSDhxdGlpMEg0cTFheWtsT3puOHghZQ==?share_link_id=24086571305" }
+        ]
+      },
+  "repositories": {
+    "title": "Herramientas de alojamiento web",
+    "content": [
+      { "name": "drive", "link": "https://drive.google.com/drive/folders/1e8PGEkJd5yQhuA1zgxm6NppnZsuQ-CEq?usp=drive_link"}, 
+      { "name": "github", "link": "https://github.com/cyberzone8" },
+      { "name": "glitch", "link": "https://glitch.com/" },
+      { "name": "railway", "link": "https://railway.app/" },
+      { "name": "replit", "link": "https://replit.com/" }
+        ]
+      },
+  "templates": {
+    "title": "Plantillas para startups",
+    "content": [
+      { "name": "Analisis Competidor", "link": "https://docs.google.com/document/d/1-akv1frcMUhZbUtGQg-HMewsgYtgXOuCOz9l3qxVSEk/edit?usp=drive_link" },
+      { "name": "Cliente", "link": "https://docs.google.com/document/d/1gsnG0NGx4hp9AVRrENMBhTnLQMWJ_ykdpjel_t_FjOY/edit?usp=drive_link" },
+      { "name": "Design Thinking", "link": "https://docs.google.com/document/d/10omvonm4_FBxggsHMX5HLagd1ejBwkBIkggTayCI7VI/edit?usp=drive_link"},
+      { "name": "Lean Canvas", "link": "https://docs.google.com/document/d/1SgG2a-QXvPxM93R5VsT6Zny2KyMbo7NvCqcPjPY4hJM/edit?usp=drive_link"},
+      { "name": "Businness canvas", "link": ""}
+    ]
+  }
+}
