@@ -1,0 +1,218 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mobile */
+body {
+    background-color: #ffffff;
+}
+
+/* Estructura del contenedor */
+.boxes {
+    display: grid;
+    grid-template-areas:
+        'header'
+        'inicio'
+        'galeria'
+        'contacto'
+        'footer';
+    grid-template-rows: auto auto auto auto auto;
+    height: 100vh;
+}
+
+/* Ocultar sidebar y mostrar menú hamburguesa en móvil */
+.sidebar {
+    display: none;
+}
+
+.nav-menu.show {
+    display: flex;
+}
+
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #2b2b2b;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+.nav-menu.show {
+    display: flex;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-menu a:hover {
+    color: #FFD700;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icono {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hamburger-menu {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Secciones */
+.section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Galería general */
+.galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+    padding: 10px;
+    text-align: center;
+}
+
+.galeria-categoria {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    grid-template-columns: 1fr; /* Por defecto una columna en dispositivos móviles */
+}
+
+.card {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #FFD700;
+    color: #2b2b2b;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #2b2b2b;
+    color: #FFD700;
+    border: 1px solid #FFD700;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #2b2b2b;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .galeria-categoria {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
+    }
+
+    .boxes {
+        grid-template-columns: 250px 2fr;
+        grid-template-areas:
+            "header header"
+            "sidebar inicio"
+            "sidebar galeria"
+            "sidebar contacto"
+            "footer footer";
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        background-color: #2b2b2b;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .sidebar a {
+        color: white;
+        text-decoration: none;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .sidebar a:hover {
+        color: #FFD700;
+    }
+
+    /* Oculta el menú hamburguesa en tabletas */
+    .hamburger-menu {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        padding: 0;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .galeria-categoria {
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en escritorio */
+    }
+}

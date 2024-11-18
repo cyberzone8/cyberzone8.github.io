@@ -1,0 +1,323 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* Estructura del contenedor */
+.boxes {
+    display: grid;
+    grid-template-areas:
+        'header'
+        'inicio'
+        'galeria'
+        'contacto'
+        'footer';
+    grid-template-rows: 100px auto auto auto auto;
+    height: 100vh;
+}
+
+/* Sidebar y menú de navegación */
+.sidebar {
+    display: none;
+}
+
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #2b2b2b;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+.nav-menu.show {
+    display: flex;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #FFD700;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icono {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icono img {
+    transition: transform 0.5s ease;
+}
+
+.icono:hover img {
+    transform: rotate(360deg);
+}
+
+.hamburger-menu {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Secciones */
+.section {
+    padding: 20px;
+    text-align: center;
+}
+
+.section h1, .section h2 {
+    transition: color 0.4s ease, transform 0.3s ease;
+}
+
+.section h1:hover, .section h2:hover {
+    color: #FFD700;
+    transform: scale(1.05);
+}
+
+/* Galería */
+.galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+    padding: 10px;
+    text-align: center;
+}
+
+.galeria-categoria {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    grid-template-columns: 1fr;
+}
+
+.card {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    transition: filter 0.4s ease;
+}
+
+.card-img-top:hover {
+    filter: grayscale(80%);
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: color 0.4s ease;
+}
+
+.card-title:hover {
+    color: #FFD700;
+}
+
+.btn {
+    background-color: #FFD700;
+    color: #2b2b2b;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2b2b2b;
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    transform: scale(1.1);
+}
+
+/* Sección de Contacto escondida inicialmente */
+.contacto {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+/* Desplegar Contacto cuando se pase el cursor por el footer */
+.footer:hover + .contacto,
+.contacto:hover {
+    max-height: 100px; /* Ajusta el alto según lo necesario */
+    opacity: 1;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #2b2b2b;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.footer:hover {
+    background-color: #1a1a1a;
+}
+
+.footer .social {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.footer .social a {
+    color: white;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .social a:hover {
+    color: #FFD700;
+    transform: scale(1.1);
+}
+
+.footer .derechos {
+    margin-top: 10px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .galeria-categoria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .boxes {
+        grid-template-columns: 250px 2fr;
+        grid-template-areas:
+            "header header"
+            "sidebar inicio"
+            "sidebar galeria"
+            "sidebar contacto"
+            "footer footer";
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        background-color: #2b2b2b;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar a {
+        color: white;
+        text-decoration: none;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .sidebar a:hover {
+        color: #FFD700;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        padding: 0;
+    }
+
+    /* Adaptación del footer para tabletas */
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 30px;
+    }
+
+    .footer .social {
+        order: 1;
+    }
+
+    .footer .derechos {
+        order: 2;
+        margin-top: 0;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .galeria-categoria {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+        /* width: 80%; */
+        max-height: 50%; /* Limita la altura máxima de las cards */
+        max-width: 75%;
+    }
+    /* Efecto de hover opcional */
+    .card:hover {
+        transform: scale(1.03);
+    }
+
+    /* Adaptación del footer para pantallas grandes */
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        padding: 20px 50px;
+    }
+
+    .footer .social, .footer .derechos {
+        grid-column: span 1;
+    }
+}
