@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+</head>
+<body>
+    <h1></h1>
+    <p></p>
+    <p>Hola, mi nombre es <span class="nombre">____</span>, mucho gusto</p>
+    <button onclick="
+        body = document.querySelector('body')
+        body.style.backgroundColor='black'
+    "> A negro </button>
+    <img id="imagen-a-trabajar" src="https://placedog.net/500
+    " alt="">
+<button onclick="
+        element = document.querySelector('#imagen-a-trabajar')
+        element.style.borderRadius='30%'
+"> Agregar Bordes </button>
+<button onclick="
+        element = document.querySelector('#imagen-a-trabajar')
+        element.style.borderRadius='0'
+"> Quitar Bordes </button>
+<ul>
+    <li id="ele1" onclick="
+    ele = document.querySelector('#ele1')
+    ele.style.textDecoration = 'line-through';
+    "> Elemento 1</li>
+    <li id="ele2" onclick="
+    ele = document.querySelector('#ele2')
+    ele.style.textDecoration = 'line-through';
+    "> Elemento 2</li>
+    <li id="ele3" onclick="
+    ele = document.querySelector('#ele3')
+    ele.style.textDecoration = 'line-through';
+    "> Elemento 3</li>
+    <li> Elemento 4</li>
+    </ul>
+
+<select id="selector" onchange="
+    element = document.querySelector('#selector')
+    body = document.querySelector('body')
+    body.style.backgroundColor = element.value
+">
+<option value="black">Negro</option>
+<option value="red">Rojo</option>
+<option value="blue">Azul</option>
+</select>
+
+<p> ¿Qué lenguaje de programación estamos aprendiendo? </p>
+<select id="selector1" onchange="
+elemento_seleccionado = document.querySelector('#selector1')
+elemento_resultado = document.querySelector('#resultado')
+elemento_resultado.innerHTML = 'La alternativa es ' +
+elemento_seleccionado.value
+">
+<option value="incorrecta">Java</option>
+<option value="correcta">Javascript</option>
+<option value="incorrecta">Python</option>
+<option value="incorrecta">Ruby</option>
+</select>
+<span id="resultado"> </span>
+
+
+    <script>
+        titulo = document.querySelector("h1")
+        titulo.innerHTML = "Este titulo fue agregado con JavaScript"
+        titulo = document.querySelector("p")
+        titulo.innerHTML = "Este parrafo fue agregado con JavaScript"
+        var nombreSpan = document.querySelector("p .nombre")
+        nombreSpan.innerHTML = "John"
+    </script>
+</body>
+</html>

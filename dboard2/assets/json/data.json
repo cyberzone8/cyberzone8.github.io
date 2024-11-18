@@ -43,8 +43,9 @@
       { "name": "github", "link": "https://github.com/cyberzone8" },
       { "name": "glitch", "link": "https://glitch.com/" },
       { "name": "railway", "link": "https://railway.app/" },
-      { "name": "replit", "link": "https://replit.com/" }
-        ]
+      { "name": "replit", "link": "https://replit.com/" },
+      {"name": "vercel", "link": "https://vercel.com/"}
+       ]
       },
   "templates": {
     "title": "Plantillas para startups",

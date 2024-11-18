@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mobile */
+body {
+    background-color: #ffffff;
+}
+
+/* Estructura de diseño general */
+.boxes {
+    display: grid;
+    grid-template-areas:
+        'header'
+        'filter'
+        'galeria'
+        'paginacion'
+        'footer';
+    grid-template-rows: 100px 100px auto 50px 100px;
+    height: 100vh; /* Asegura que la altura de las cajas ocupe toda la pantalla */
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background-color: #0d47a1;
+    color: #ffffff;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icono {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hamburger-menu {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: none;
+}
+
+/* Filter */
+.filter {
+    grid-area: filter;
+    background-color: #cecece;
+    color: #000000;
+    padding: 15px;
+}
+
+.filter.box {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter.box select {
+    width: 90%;
+    padding: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Galeria */
+.galeria {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna por defecto en pantallas pequeñas */
+    gap: 20px;
+    justify-items: center; /* Centrar las tarjetas horizontalmente */
+    overflow-y: auto; /* Permitir el desplazamiento vertical */
+    max-height: calc(100vh - 100px - 100px - 50px - 100px); /* Altura máxima para que no tape el footer */
+    padding: 10px; /* Añadir un poco de padding para un diseño más limpio */
+}
+
+.card {
+    max-width: 300px;
+    width: 100%; /* Asegura que las tarjetas ocupen todo el ancho posible */
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #0d47a1;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #003f7f;
+}
+
+/* Paginacion */
+.paginacion {
+    grid-area: paginacion;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.paginacion ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    padding: 0;
+}
+
+.paginacion ul li {
+    display: inline;
+}
+
+.paginacion ul li a {
+    color: #0d47a1;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.paginacion ul li a:hover {
+    background-color: #0d47a1;
+    color: white;
+}
+
+.paginacion ul li a.active {
+    background-color: #0d47a1;
+    color: white;
+}
+
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #0d47a1;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Tablet: Mostrar dos tarjetas */
+@media (min-width: 768px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas de tablet */
+    }
+
+    .boxes {
+        grid-template-areas:
+            'header header'
+            'filter galeria'
+            'filter paginacion'
+            'footer footer';
+        grid-template-rows: 100px calc(100vh - 100px - 50px - 100px) 50px 100px;
+        grid-template-columns: 300px calc(100vw - 300px);
+    }
+
+    .header {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .nav-menu {
+        padding: 50px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .nav-menu a:hover {
+        color: #FFD700;
+    }
+}
+
+/* Laptop: Mostrar tres tarjetas */
+@media (min-width: 1200px) {
+    .galeria {
+        grid-template-columns: repeat(4, 1fr); /* Tres columnas en pantallas grandes */
+    }
+
+    .boxes {
+        grid-template-areas:
+            'header filter'
+            'header galeria'
+            'footer paginacion';
+        grid-template-rows: 100px calc(100vh - 100px - 100px) 100px;
+    }
+}
