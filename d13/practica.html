@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categoría de Temperatura</title>
+</head>
+<body>
+  <h1>Clasificación de la Temperatura</h1>
+  <p>Ingresa la temperatura actual en grados Celsius para saber su categoría.</p>
+  
+  <label for="temperatura">Temperatura (°C):</label>
+  <input type="number" id="temperatura" placeholder="Ejemplo: 25">
+  <button id="calcular">Clasificar</button>
+  
+  <p id="resultado"></p>
+
+  <script>
+    document.getElementById('calcular').addEventListener('click', () => {
+      // Obtener la temperatura ingresada
+      const temperatura = parseFloat(document.getElementById('temperatura').value);
+      const resultado = document.getElementById('resultado');
+
+      // Validar y clasificar la temperatura
+      if (isNaN(temperatura)) {
+        resultado.textContent = 'Por favor, ingresa un valor numérico válido.';
+      } else if (temperatura < 0) {
+        resultado.textContent = 'Hace mucho frío.';
+      } else if (temperatura >= 0 && temperatura <= 10) {
+        resultado.textContent = 'Hace frío.';
+      } else if (temperatura >= 11 && temperatura <= 20) {
+        resultado.textContent = 'Temperatura agradable.';
+      } else if (temperatura >= 21 && temperatura <= 30) {
+        resultado.textContent = 'Hace calor.';
+      } else if (temperatura > 30) {
+        resultado.textContent = 'Hace mucho calor.';
+      }
+    });
+  </script>
+</body>
+</html>
