@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Colores</title>
+</head>
+<body>
+    <div id="azul" style="width: 200px; height: 200px; background-color: blue;"></div>
+    <div id="rojo" style="width: 200px; height: 200px; background-color: red;"></div>
+    <div id="verde" style="width: 200px; height: 200px; background-color: green;"></div>
+    <div id="amarillo" style="width: 200px; height: 200px; background-color: yellow;"></div>
+
+    <script>
+        // Cambiar color al hacer clic en cada div
+        const cambiarColor = (id) => {
+            document.getElementById(id).addEventListener("click", function () {
+                this.style.backgroundColor = "black";
+            });
+        };
+
+        // Asociar eventos a cada div
+        cambiarColor("azul");
+        cambiarColor("rojo");
+        cambiarColor("verde");
+        cambiarColor("amarillo");
+    </script>
+</body>
+</html>

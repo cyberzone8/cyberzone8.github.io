@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclas y Colores</title>
+    <style>
+        #key {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="key"></div>
+
+    <script>
+        // Mapa de colores para teclas
+        const colores = {
+            a: "pink",
+            s: "orange",
+            d: "skyblue",
+            q: "purple",
+            w: "gray",
+            e: "brown"
+        };
+
+        // Escuchar eventos de teclado
+        document.addEventListener("keydown", function (event) {
+            const key = event.key.toLowerCase();
+            const keyDiv = document.getElementById("key");
+
+            if (colores[key]) {
+                if (["a", "s", "d"].includes(key)) {
+                    // Cambiar color del div existente
+                    keyDiv.style.backgroundColor = colores[key];
+                } else if (["q", "w", "e"].includes(key)) {
+                    // Crear un nuevo div con el color correspondiente
+                    const nuevoDiv = document.createElement("div");
+                    nuevoDiv.style.width = "200px";
+                    nuevoDiv.style.height = "200px";
+                    nuevoDiv.style.backgroundColor = colores[key];
+                    nuevoDiv.style.border = "1px solid black";
+                    document.body.appendChild(nuevoDiv);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
