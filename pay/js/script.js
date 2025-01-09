@@ -1,72 +1,105 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const tableBody = document.getElementById("property-table");
-    const rutInput = document.getElementById("rut-input");
-    const viewTenantDataButton = document.getElementById("view-tenant-data");
-    const viewLandlordDataButton = document.getElementById("view-landlord-data");
+document.addEventListener("DOMContentLoaded", async function () {
+    const propertyTable = document.getElementById("property-table");
+    const ufValueDisplay = document.getElementById("ufValueDisplay");
+    const convertButton = document.getElementById("convertButton");
+    const conversionResult = document.getElementById("conversionResult");
+    const ufAmountInput = document.getElementById("ufAmount");
 
-    // Clave secreta para la vista de arrendador
-    const landlordPassword = "clave123";
+    // Función para obtener el valor de la UF y mostrarlo en el subtítulo
+    async function fetchUFValue() {
+        try {
+            const response = await fetch("https://mindicador.cl/api");
+            if (!response.ok) {
+                throw new Error("No se pudo obtener el valor de la UF.");
+            }
+            const data = await response.json();
+            const ufValue = data.uf.valor;
+            const today = new Date();
+            const formattedDate = today.toLocaleDateString("es-CL", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+            });
 
-    // Cargar datos del arrendatario
-    viewTenantDataButton.addEventListener("click", () => {
-        const rut = rutInput.value.trim();
-        if (!rut) {
-            alert("Por favor, ingrese un RUT válido.");
+            ufValueDisplay.textContent = `UF: $${ufValue.toLocaleString("es-CL")} (al ${formattedDate})`;
+
+            return ufValue;
+        } catch (error) {
+            console.error("Error al obtener el valor de la UF:", error);
+            ufValueDisplay.textContent = "No se pudo cargar el valor de la UF.";
+            return null;
+        }
+    }
+
+    // Función para cargar datos de la tabla desde un archivo JSON
+    async function loadPropertyData() {
+        try {
+            const response = await fetch("./data.json");
+            if (!response.ok) {
+                throw new Error("No se pudo cargar los datos de propiedades.");
+            }
+            const properties = await response.json();
+
+            propertyTable.innerHTML = "";
+
+            properties.forEach((property) => {
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${property.propiedad}</td>
+                    <td>${property.arrendatario}</td>
+                    <td class="${getStatusClass(property.renta.estado)}">${formatCurrency(property.renta.monto)} (${property.renta.estado})</td>
+                    <td class="${getStatusClass(property.electricidad.estado)}">${formatCurrency(property.electricidad.monto)} (${property.electricidad.estado})</td>
+                    <td class="${getStatusClass(property.agua.estado)}">${formatCurrency(property.agua.monto)} (${property.agua.estado})</td>
+                    <td class="${getStatusClass(property.gas.estado)}">${formatCurrency(property.gas.monto)} (${property.gas.estado})</td>
+                    <td class="${getStatusClass(property.cable.estado)}">${formatCurrency(property.cable.monto)} (${property.cable.estado})</td>
+                    <td>${property.mes}</td>
+                    <td>${property.año}</td>
+                `;
+
+                propertyTable.appendChild(row);
+            });
+        } catch (error) {
+            console.error("Error al cargar los datos de propiedades:", error);
+        }
+    }
+
+    function formatCurrency(value) {
+        return `$${value.toLocaleString("es-CL")}`;
+    }
+
+    function getStatusClass(status) {
+        switch (status) {
+            case "Paid":
+                return "paid";
+            case "Unpaid":
+                return "unpaid";
+            case "Pending":
+                return "pending";
+            default:
+                return "";
+        }
+    }
+
+    async function handleUFConversion() {
+        const ufValue = await fetchUFValue();
+        if (ufValue === null) {
+            conversionResult.textContent = "No se pudo realizar la conversión.";
             return;
         }
-        const filteredData = propertiesData.filter(item => item.rut === rut);
-        if (filteredData.length === 0) {
-            alert("No se encontraron datos para este RUT.");
-        } else {
-            loadTable(filteredData);
+
+        const ufAmount = parseFloat(ufAmountInput.value);
+        if (isNaN(ufAmount) || ufAmount <= 0) {
+            conversionResult.textContent = "Por favor, ingrese un monto válido en UF.";
+            return;
         }
-    });
 
-    // Cargar datos del arrendador con clave
-    viewLandlordDataButton.addEventListener("click", () => {
-        const password = prompt("Ingrese la clave de arrendador:");
-        if (password === landlordPassword) {
-            loadTable(propertiesData);
-        } else {
-            alert("Clave incorrecta.");
-        }
-    });
-
-    // Función para cargar la tabla
-    function loadTable(data) {
-        tableBody.innerHTML = ""; // Limpiar la tabla
-        data.forEach(item => {
-            const { property, tenant, month, year, services } = item;
-
-            // Crear una sola fila por mes y año
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${property}</td>
-                <td>${tenant}</td>
-                <td class="status-${services.rent.status}">
-                    ${services.rent.amount} (${capitalize(services.rent.status)})
-                </td>
-                <td class="status-${services.electricity.status}">
-                    ${services.electricity.amount} (${capitalize(services.electricity.status)})
-                </td>
-                <td class="status-${services.water.status}">
-                    ${services.water.amount} (${capitalize(services.water.status)})
-                </td>
-                <td class="status-${services.gas.status}">
-                    ${services.gas.amount} (${capitalize(services.gas.status)})
-                </td>
-                <td class="status-${services.cable.status}">
-                    ${services.cable.amount} (${capitalize(services.cable.status)})
-                </td>
-                <td>${month}</td>
-                <td>${year}</td>
-            `;
-            tableBody.appendChild(row);
-        });
+        const conversionResultValue = ufAmount * ufValue;
+        conversionResult.textContent = `El monto en pesos chilenos es: $${conversionResultValue.toLocaleString("es-CL")}`;
     }
 
-    // Función para capitalizar palabras
-    function capitalize(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
+    convertButton.addEventListener("click", handleUFConversion);
+
+    await fetchUFValue();
+    await loadPropertyData();
 });
