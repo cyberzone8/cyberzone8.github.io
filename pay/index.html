@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Propiedades</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Propiedades</h1>
+    </header>
+    <div class="container">
+        <div class="filters">
+            <input
+                type="text"
+                id="rut-input"
+                placeholder="Ingrese su RUT (sin puntos, guion ni dígito verificador)"
+            />
+            <button id="view-tenant-data">Ver Mis Datos</button>
+            <button id="view-landlord-data">Vista de Arrendador</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Propiedad</th>
+                    <th>Arrendatario</th>
+                    <th>Renta</th>
+                    <th>Electricidad</th>
+                    <th>Agua</th>
+                    <th>Gas</th>
+                    <th>Cable</th>
+                    <th>Mes</th>
+                    <th>Año</th>
+                </tr>
+            </thead>
+            <tbody id="property-table">
+                <!-- Filas dinámicas cargadas desde JSON -->
+            </tbody>
+        </table>
+    </div>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
+
