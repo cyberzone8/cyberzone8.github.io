@@ -7,10 +7,10 @@ const propiedades_venta = [
       src: "assets/img/casa1.jpg",
       descripcion: "Hermosa casa en una zona tranquila.",
       ubicacion: "Las Lomas",
-      habitaciones: 3,
+      habitaciones: 4,
       baños:4,
       costo: 120000,
-      smoke: false,
+      smoke: true,
       pets: true,
     },
     {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,37 +10,50 @@
     <header>
         <h1>Gestión de Propiedades</h1>
     </header>
-    <div class="container">
-        <div class="filters">
-            <input
-                type="text"
-                id="rut-input"
-                placeholder="Ingrese su RUT (sin puntos, guion ni dígito verificador)"
-            />
-            <button id="view-tenant-data">Ver Mis Datos</button>
-            <button id="view-landlord-data">Vista de Arrendador</button>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Propiedad</th>
-                    <th>Arrendatario</th>
-                    <th>Renta</th>
-                    <th>Electricidad</th>
-                    <th>Agua</th>
-                    <th>Gas</th>
-                    <th>Cable</th>
-                    <th>Mes</th>
-                    <th>Año</th>
-                </tr>
-            </thead>
-            <tbody id="property-table">
-                <!-- Filas dinámicas cargadas desde JSON -->
-            </tbody>
-        </table>
-    </div>
-    <script src="./assets/js/data.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <main class="container">
+        <!-- Filtros -->
+        <section class="filters">
+            <label for="rut-input">RUT:</label>
+            <input type="text" id="rut-input" placeholder="Ej: 12345678" aria-label="Ingrese su RUT" />
+            <button id="view-tenant-data" aria-label="Ver datos de arrendatario">Ver Mis Datos</button>
+            <button id="view-landlord-data" aria-label="Vista de arrendador">Vista de Arrendador</button>
+        </section>
+
+        <!-- Tabla de propiedades -->
+        <section aria-labelledby="property-table-title">
+            <h2 id="property-table-title">Propiedades</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Propiedad</th>
+                        <th>Arrendatario</th>
+                        <th>Renta</th>
+                        <th>Electricidad</th>
+                        <th>Agua</th>
+                        <th>Gas</th>
+                        <th>Cable</th>
+                        <th>Mes</th>
+                        <th>Año</th>
+                    </tr>
+                </thead>
+                <tbody id="property-table">
+                    <tr><td colspan="9">Cargando datos...</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Conversor UF -->
+        <section class="uf-converter" aria-labelledby="uf-converter-title">
+            <h2 id="uf-converter-title">Conversión de UF a Peso Chileno</h2>
+            <p id="ufValueDisplay">Cargando valor de la UF...</p>
+            <div>
+                <label for="ufAmount">Ingrese monto en UF:</label>
+                <input type="number" id="ufAmount" placeholder="Ej: 5.6" step="0.01" min="0" aria-label="Monto en UF">
+                <button id="convertButton">Convertir</button>
+            </div>
+            <div id="conversionResult" aria-live="polite" class="result"></div>
+        </section>
+    </main>
+    <script src="./assets/js/script.js" defer></script>
 </body>
 </html>
-
