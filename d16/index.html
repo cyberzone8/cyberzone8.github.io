@@ -1,35 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
+    <title>Sistema de Gestión de Tareas</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Todo List</h1>
-        <div class="new-task">
-            <input type="text" id="taskInput" placeholder="Nueva tarea">
-            <button id="addTaskButton">Agregar</button>
+        <h1>Sistema de Gestión de Tareas</h1>
+        
+        <div class="dashboard">
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>Resumen</h3>
+                    <p>Total: <span id="totalTasks">0</span></p>
+                    <p>Realizadas: <span id="completedTasks">0</span></p>
+                    <p>Pendientes: <span id="pendingTasks">0</span></p>
+                </div>
+                <div class="stat-box">
+                    <h3>Proyectos</h3>
+                    <div id="projectStats"></div>
+                </div>
+            </div>
         </div>
-        <div class="stats">
-            <p>Total: <span id="totalTasks">0</span></p>
-            <p>Realizadas: <span id="completedTasks">0</span></p>
+
+        <div class="task-container">
+            <div class="new-task">
+                <input type="text" id="taskInput" placeholder="Nueva tarea">
+                <select id="projectSelect">
+                    <option value="">-- Proyecto --</option>
+                    <option value="software">Proyecto Software</option>
+                    <option value="tesis">Tesis Doctoral</option>
+                    <option value="ingles">Aprendizaje Inglés</option>
+                    <option value="empresas">Gestión Empresas</option>
+                    <option value="trabajo">Trabajo MT</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <select id="prioritySelect">
+                    <option value="">-- Prioridad --</option>
+                    <option value="alta">Alta</option>
+                    <option value="media">Media</option>
+                    <option value="baja">Baja</option>
+                </select>
+                <button id="addTaskButton">Agregar</button>
+            </div>
+
+            <div class="filter-container">
+                <label>Filtrar por: </label>
+                <select id="filterProject">
+                    <option value="todos">Todos los proyectos</option>
+                    <option value="software">Proyecto Software</option>
+                    <option value="tesis">Tesis Doctoral</option>
+                    <option value="ingles">Aprendizaje Inglés</option>
+                    <option value="empresas">Gestión Empresas</option>
+                    <option value="trabajo">Trabajo MT</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <select id="filterPriority">
+                    <option value="todas">Todas las prioridades</option>
+                    <option value="alta">Alta</option>
+                    <option value="media">Media</option>
+                    <option value="baja">Baja</option>
+                </select>
+                <button id="clearFilters">Limpiar filtros</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tarea</th>
+                        <th>Proyecto</th>
+                        <th>Prioridad</th>
+                        <th>Completada</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="taskList">
+                    <!-- Las tareas se insertarán dinámicamente -->
+                </tbody>
+            </table>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Tarea</th>
-                    <th>Completada</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="taskList">
-                <!-- Las tareas se insertarán dinámicamente -->
-            </tbody>
-        </table>
+
+        <div class="focus-mode">
+            <h3>Modo Enfoque</h3>
+            <p>Selecciona las 3 tareas MIR (Más Importantes y Relevantes) para hoy:</p>
+            <ol id="focusList">
+                <li class="empty">Sin tarea seleccionada</li>
+                <li class="empty">Sin tarea seleccionada</li>
+                <li class="empty">Sin tarea seleccionada</li>
+            </ol>
+        </div>
     </div>
     <script src="./assets/js/script.js"></script>
 </body>
